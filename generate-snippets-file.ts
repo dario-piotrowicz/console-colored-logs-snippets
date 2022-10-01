@@ -23,12 +23,14 @@ print(
   */`
 );
 
+const rootPrefix = "ncl";
+
 function printSnippet(snippetName: string, prefix: string, logCommand: string, description: string) {
   print(
     `
   "Node Console log - ${snippetName}": {
     "scope": "javascript,typescript",
-    "prefix": "nodecl-${prefix}",
+    "prefix": "${rootPrefix}-${prefix}",
     "body": [
       "${logCommand}",
       "$2"
