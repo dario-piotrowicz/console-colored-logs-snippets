@@ -170,4 +170,564 @@
     ],
     "description": "Console log text with a white background for nodejs"
   },
+
+  "Node Console log - Black text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-red",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a red background for nodejs"
+  },
+
+  "Node Console log - Black text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-green",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a green background for nodejs"
+  },
+
+  "Node Console log - Black text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a yellow background for nodejs"
+  },
+
+  "Node Console log - Black text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-blue",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a blue background for nodejs"
+  },
+
+  "Node Console log - Black text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a magenta background for nodejs"
+  },
+
+  "Node Console log - Black text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a cyan background for nodejs"
+  },
+
+  "Node Console log - Black text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-black-bg-white",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with black text and a white background for nodejs"
+  },
+
+  "Node Console log - Red text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-black",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a black background for nodejs"
+  },
+
+  "Node Console log - Red text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-green",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a green background for nodejs"
+  },
+
+  "Node Console log - Red text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a yellow background for nodejs"
+  },
+
+  "Node Console log - Red text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-blue",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a blue background for nodejs"
+  },
+
+  "Node Console log - Red text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a magenta background for nodejs"
+  },
+
+  "Node Console log - Red text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a cyan background for nodejs"
+  },
+
+  "Node Console log - Red text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-red-bg-white",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with red text and a white background for nodejs"
+  },
+
+  "Node Console log - Green text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-black",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a black background for nodejs"
+  },
+
+  "Node Console log - Green text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-red",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a red background for nodejs"
+  },
+
+  "Node Console log - Green text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a yellow background for nodejs"
+  },
+
+  "Node Console log - Green text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-blue",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a blue background for nodejs"
+  },
+
+  "Node Console log - Green text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a magenta background for nodejs"
+  },
+
+  "Node Console log - Green text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a cyan background for nodejs"
+  },
+
+  "Node Console log - Green text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-green-bg-white",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with green text and a white background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-black",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a black background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-red",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a red background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-green",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a green background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-blue",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a blue background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a magenta background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a cyan background for nodejs"
+  },
+
+  "Node Console log - Yellow text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-yellow-bg-white",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with yellow text and a white background for nodejs"
+  },
+
+  "Node Console log - Blue text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-black",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a black background for nodejs"
+  },
+
+  "Node Console log - Blue text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-red",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a red background for nodejs"
+  },
+
+  "Node Console log - Blue text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-green",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a green background for nodejs"
+  },
+
+  "Node Console log - Blue text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a yellow background for nodejs"
+  },
+
+  "Node Console log - Blue text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a magenta background for nodejs"
+  },
+
+  "Node Console log - Blue text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a cyan background for nodejs"
+  },
+
+  "Node Console log - Blue text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-blue-bg-white",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with blue text and a white background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-black",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a black background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-red",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a red background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-green",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a green background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a yellow background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-blue",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a blue background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a cyan background for nodejs"
+  },
+
+  "Node Console log - Magenta text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-magenta-bg-white",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with magenta text and a white background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-black",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a black background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-red",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a red background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-green",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a green background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a yellow background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-blue",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a blue background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a magenta background for nodejs"
+  },
+
+  "Node Console log - Cyan text with a white Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-cyan-bg-white",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[47m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with cyan text and a white background for nodejs"
+  },
+
+  "Node Console log - White text with a black Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-black",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[40m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a black background for nodejs"
+  },
+
+  "Node Console log - White text with a red Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-red",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[41m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a red background for nodejs"
+  },
+
+  "Node Console log - White text with a green Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-green",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[42m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a green background for nodejs"
+  },
+
+  "Node Console log - White text with a yellow Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-yellow",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[43m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a yellow background for nodejs"
+  },
+
+  "Node Console log - White text with a blue Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-blue",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[44m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a blue background for nodejs"
+  },
+
+  "Node Console log - White text with a magenta Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-magenta",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[45m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a magenta background for nodejs"
+  },
+
+  "Node Console log - White text with a cyan Background": {
+    "scope": "javascript,typescript",
+    "prefix": "nodecl-white-bg-cyan",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[46m $1 \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "Console log text with white text and a cyan background for nodejs"
+  },
 }

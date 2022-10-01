@@ -72,7 +72,7 @@ for ( const [color, code] of Object.entries(foregroundColors) ) {
     color,
     `console.log(\`${code} $1 ${reset}\`);`,
     `Console log text colored in ${color} for nodejs`
-  )
+  );
 }
 
 for ( const [color, code] of Object.entries(backgroundColors) ) {
@@ -81,7 +81,20 @@ for ( const [color, code] of Object.entries(backgroundColors) ) {
     `bg-${color}`,
     `console.log(\`${code} $1 ${reset}\`);`,
     `Console log text with a ${color} background for nodejs`
-  )
+  );
+}
+
+for ( const [foregroundColor, foregroundCode] of Object.entries(foregroundColors) ) {
+  for ( const [backgroundColor, backgroundCode] of Object.entries(backgroundColors) ) {
+    if(foregroundColor !== backgroundColor) {
+      printSnippet(
+        `${capitalize(foregroundColor)} text with a ${backgroundColor} Background`,
+        `${foregroundColor}-bg-${backgroundColor}`,
+        `console.log(\`${foregroundCode}${backgroundCode} $1 ${reset}\`);`,
+        `Console log text with ${foregroundColor} text and a ${backgroundColor} background for nodejs`
+      );
+    }
+  }
 }
 
 print('}');
