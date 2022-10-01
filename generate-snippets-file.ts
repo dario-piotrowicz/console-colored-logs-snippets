@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const snippetsFile = "./console-colored-logs.code-snippets"
+const snippetsFile = "./snippets/snippets.code-snippets"
 
 fs.writeFileSync(snippetsFile, '');
 
@@ -8,31 +8,14 @@ function print(line: string) {
   fs.appendFileSync(snippetsFile, `${line}\n`);
 }
 
-print(
-  `{
-  /*
-    Node's \`console.log\` calls don't accept css stylings as the browser's calls do, so this is a set of snippets
-    that you can use to easily style such console logs on the fly.
-
-    Source for the codes: https://gist.github.com/abritinthebay/d80eb99b2726c83feb0d97eab95206c4
-
-    Note: the purpose for this snippets is for quickly styling the \`console.log\`s when debugging to allow you to
-          easily identify the outputs you're interested in. If you want to provide proper styling for your node
-          application I would suggest to use proper libraries such as https://github.com/chalk/chalk or
-          https://github.com/medikoo/cli-color instead.
-
-    Note: the idea for this set of snippets was for them to be used in node applications, but browsers also accept
-          the color codes so the snippets can be used in standard browser js as well.
-  */`
-);
+print('{');
 
 const rootPrefix = "ccl";
 
 function printSnippet(snippetName: string, prefix: string, logCommand: string, description: string) {
   print(
     `
-  "Node Console log - ${snippetName}": {
-    "scope": "javascript,typescript",
+  "Console Colored log - ${snippetName}": {
     "prefix": "${rootPrefix}-${prefix}",
     "body": [
       "${logCommand}",
@@ -93,7 +76,7 @@ for ( const [foregroundColor, foregroundCode] of Object.entries(foregroundColors
   for ( const [backgroundColor, backgroundCode] of Object.entries(backgroundColors) ) {
     if(foregroundColor !== backgroundColor) {
       printSnippet(
-        `${capitalize(foregroundColor)} text with a ${backgroundColor} Background`,
+        `${capitalize(foregroundColor)} text with a ${backgroundColor} background`,
         `${foregroundColor}-bg-${backgroundColor}`,
         `console.log(\`${foregroundCode}${backgroundCode} $1 ${reset}\`);`,
         `Console log text with ${foregroundColor} text and a ${backgroundColor} background for nodejs`
