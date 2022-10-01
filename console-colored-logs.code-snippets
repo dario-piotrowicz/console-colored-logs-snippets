@@ -9,11 +9,14 @@
           easily identify the outputs you're interested in. If you want to provide proper styling for your node
           application I would suggest to use proper libraries such as https://github.com/chalk/chalk or
           https://github.com/medikoo/cli-color instead.
+
+    Note: the idea for this set of snippets was for them to be used in node applications, but browsers also accept
+          the color codes so the snippets can be used in standard browser js as well.
   */
 
   "Node Console log - Black Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black",
+    "prefix": "ccl-black",
     "body": [
       "console.log(`\\x1b[30m $1 \\x1b[0m`);",
       "$2"
@@ -23,7 +26,7 @@
 
   "Node Console log - Red Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red",
+    "prefix": "ccl-red",
     "body": [
       "console.log(`\\x1b[31m $1 \\x1b[0m`);",
       "$2"
@@ -33,7 +36,7 @@
 
   "Node Console log - Green Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green",
+    "prefix": "ccl-green",
     "body": [
       "console.log(`\\x1b[32m $1 \\x1b[0m`);",
       "$2"
@@ -43,7 +46,7 @@
 
   "Node Console log - Yellow Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow",
+    "prefix": "ccl-yellow",
     "body": [
       "console.log(`\\x1b[33m $1 \\x1b[0m`);",
       "$2"
@@ -53,7 +56,7 @@
 
   "Node Console log - Blue Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue",
+    "prefix": "ccl-blue",
     "body": [
       "console.log(`\\x1b[34m $1 \\x1b[0m`);",
       "$2"
@@ -63,7 +66,7 @@
 
   "Node Console log - Magenta Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta",
+    "prefix": "ccl-magenta",
     "body": [
       "console.log(`\\x1b[35m $1 \\x1b[0m`);",
       "$2"
@@ -73,7 +76,7 @@
 
   "Node Console log - Cyan Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan",
+    "prefix": "ccl-cyan",
     "body": [
       "console.log(`\\x1b[36m $1 \\x1b[0m`);",
       "$2"
@@ -83,7 +86,7 @@
 
   "Node Console log - White Text": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white",
+    "prefix": "ccl-white",
     "body": [
       "console.log(`\\x1b[37m $1 \\x1b[0m`);",
       "$2"
@@ -93,7 +96,7 @@
 
   "Node Console log - Black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-black",
+    "prefix": "ccl-bg-black",
     "body": [
       "console.log(`\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -103,7 +106,7 @@
 
   "Node Console log - Red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-red",
+    "prefix": "ccl-bg-red",
     "body": [
       "console.log(`\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -113,7 +116,7 @@
 
   "Node Console log - Green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-green",
+    "prefix": "ccl-bg-green",
     "body": [
       "console.log(`\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -123,7 +126,7 @@
 
   "Node Console log - Yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-yellow",
+    "prefix": "ccl-bg-yellow",
     "body": [
       "console.log(`\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -133,7 +136,7 @@
 
   "Node Console log - Blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-blue",
+    "prefix": "ccl-bg-blue",
     "body": [
       "console.log(`\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -143,7 +146,7 @@
 
   "Node Console log - Magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-magenta",
+    "prefix": "ccl-bg-magenta",
     "body": [
       "console.log(`\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -153,7 +156,7 @@
 
   "Node Console log - Cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-cyan",
+    "prefix": "ccl-bg-cyan",
     "body": [
       "console.log(`\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -163,7 +166,7 @@
 
   "Node Console log - White Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-bg-white",
+    "prefix": "ccl-bg-white",
     "body": [
       "console.log(`\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -173,7 +176,7 @@
 
   "Node Console log - Black text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-red",
+    "prefix": "ccl-black-bg-red",
     "body": [
       "console.log(`\\x1b[30m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -183,7 +186,7 @@
 
   "Node Console log - Black text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-green",
+    "prefix": "ccl-black-bg-green",
     "body": [
       "console.log(`\\x1b[30m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -193,7 +196,7 @@
 
   "Node Console log - Black text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-yellow",
+    "prefix": "ccl-black-bg-yellow",
     "body": [
       "console.log(`\\x1b[30m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -203,7 +206,7 @@
 
   "Node Console log - Black text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-blue",
+    "prefix": "ccl-black-bg-blue",
     "body": [
       "console.log(`\\x1b[30m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -213,7 +216,7 @@
 
   "Node Console log - Black text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-magenta",
+    "prefix": "ccl-black-bg-magenta",
     "body": [
       "console.log(`\\x1b[30m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -223,7 +226,7 @@
 
   "Node Console log - Black text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-cyan",
+    "prefix": "ccl-black-bg-cyan",
     "body": [
       "console.log(`\\x1b[30m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -233,7 +236,7 @@
 
   "Node Console log - Black text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-black-bg-white",
+    "prefix": "ccl-black-bg-white",
     "body": [
       "console.log(`\\x1b[30m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -243,7 +246,7 @@
 
   "Node Console log - Red text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-black",
+    "prefix": "ccl-red-bg-black",
     "body": [
       "console.log(`\\x1b[31m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -253,7 +256,7 @@
 
   "Node Console log - Red text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-green",
+    "prefix": "ccl-red-bg-green",
     "body": [
       "console.log(`\\x1b[31m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -263,7 +266,7 @@
 
   "Node Console log - Red text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-yellow",
+    "prefix": "ccl-red-bg-yellow",
     "body": [
       "console.log(`\\x1b[31m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -273,7 +276,7 @@
 
   "Node Console log - Red text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-blue",
+    "prefix": "ccl-red-bg-blue",
     "body": [
       "console.log(`\\x1b[31m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -283,7 +286,7 @@
 
   "Node Console log - Red text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-magenta",
+    "prefix": "ccl-red-bg-magenta",
     "body": [
       "console.log(`\\x1b[31m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -293,7 +296,7 @@
 
   "Node Console log - Red text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-cyan",
+    "prefix": "ccl-red-bg-cyan",
     "body": [
       "console.log(`\\x1b[31m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -303,7 +306,7 @@
 
   "Node Console log - Red text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-red-bg-white",
+    "prefix": "ccl-red-bg-white",
     "body": [
       "console.log(`\\x1b[31m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -313,7 +316,7 @@
 
   "Node Console log - Green text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-black",
+    "prefix": "ccl-green-bg-black",
     "body": [
       "console.log(`\\x1b[32m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -323,7 +326,7 @@
 
   "Node Console log - Green text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-red",
+    "prefix": "ccl-green-bg-red",
     "body": [
       "console.log(`\\x1b[32m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -333,7 +336,7 @@
 
   "Node Console log - Green text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-yellow",
+    "prefix": "ccl-green-bg-yellow",
     "body": [
       "console.log(`\\x1b[32m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -343,7 +346,7 @@
 
   "Node Console log - Green text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-blue",
+    "prefix": "ccl-green-bg-blue",
     "body": [
       "console.log(`\\x1b[32m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -353,7 +356,7 @@
 
   "Node Console log - Green text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-magenta",
+    "prefix": "ccl-green-bg-magenta",
     "body": [
       "console.log(`\\x1b[32m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -363,7 +366,7 @@
 
   "Node Console log - Green text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-cyan",
+    "prefix": "ccl-green-bg-cyan",
     "body": [
       "console.log(`\\x1b[32m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -373,7 +376,7 @@
 
   "Node Console log - Green text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-green-bg-white",
+    "prefix": "ccl-green-bg-white",
     "body": [
       "console.log(`\\x1b[32m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -383,7 +386,7 @@
 
   "Node Console log - Yellow text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-black",
+    "prefix": "ccl-yellow-bg-black",
     "body": [
       "console.log(`\\x1b[33m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -393,7 +396,7 @@
 
   "Node Console log - Yellow text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-red",
+    "prefix": "ccl-yellow-bg-red",
     "body": [
       "console.log(`\\x1b[33m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -403,7 +406,7 @@
 
   "Node Console log - Yellow text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-green",
+    "prefix": "ccl-yellow-bg-green",
     "body": [
       "console.log(`\\x1b[33m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -413,7 +416,7 @@
 
   "Node Console log - Yellow text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-blue",
+    "prefix": "ccl-yellow-bg-blue",
     "body": [
       "console.log(`\\x1b[33m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -423,7 +426,7 @@
 
   "Node Console log - Yellow text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-magenta",
+    "prefix": "ccl-yellow-bg-magenta",
     "body": [
       "console.log(`\\x1b[33m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -433,7 +436,7 @@
 
   "Node Console log - Yellow text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-cyan",
+    "prefix": "ccl-yellow-bg-cyan",
     "body": [
       "console.log(`\\x1b[33m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -443,7 +446,7 @@
 
   "Node Console log - Yellow text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-yellow-bg-white",
+    "prefix": "ccl-yellow-bg-white",
     "body": [
       "console.log(`\\x1b[33m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -453,7 +456,7 @@
 
   "Node Console log - Blue text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-black",
+    "prefix": "ccl-blue-bg-black",
     "body": [
       "console.log(`\\x1b[34m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -463,7 +466,7 @@
 
   "Node Console log - Blue text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-red",
+    "prefix": "ccl-blue-bg-red",
     "body": [
       "console.log(`\\x1b[34m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -473,7 +476,7 @@
 
   "Node Console log - Blue text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-green",
+    "prefix": "ccl-blue-bg-green",
     "body": [
       "console.log(`\\x1b[34m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -483,7 +486,7 @@
 
   "Node Console log - Blue text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-yellow",
+    "prefix": "ccl-blue-bg-yellow",
     "body": [
       "console.log(`\\x1b[34m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -493,7 +496,7 @@
 
   "Node Console log - Blue text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-magenta",
+    "prefix": "ccl-blue-bg-magenta",
     "body": [
       "console.log(`\\x1b[34m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -503,7 +506,7 @@
 
   "Node Console log - Blue text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-cyan",
+    "prefix": "ccl-blue-bg-cyan",
     "body": [
       "console.log(`\\x1b[34m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -513,7 +516,7 @@
 
   "Node Console log - Blue text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-blue-bg-white",
+    "prefix": "ccl-blue-bg-white",
     "body": [
       "console.log(`\\x1b[34m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -523,7 +526,7 @@
 
   "Node Console log - Magenta text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-black",
+    "prefix": "ccl-magenta-bg-black",
     "body": [
       "console.log(`\\x1b[35m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -533,7 +536,7 @@
 
   "Node Console log - Magenta text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-red",
+    "prefix": "ccl-magenta-bg-red",
     "body": [
       "console.log(`\\x1b[35m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -543,7 +546,7 @@
 
   "Node Console log - Magenta text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-green",
+    "prefix": "ccl-magenta-bg-green",
     "body": [
       "console.log(`\\x1b[35m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -553,7 +556,7 @@
 
   "Node Console log - Magenta text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-yellow",
+    "prefix": "ccl-magenta-bg-yellow",
     "body": [
       "console.log(`\\x1b[35m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -563,7 +566,7 @@
 
   "Node Console log - Magenta text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-blue",
+    "prefix": "ccl-magenta-bg-blue",
     "body": [
       "console.log(`\\x1b[35m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -573,7 +576,7 @@
 
   "Node Console log - Magenta text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-cyan",
+    "prefix": "ccl-magenta-bg-cyan",
     "body": [
       "console.log(`\\x1b[35m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
@@ -583,7 +586,7 @@
 
   "Node Console log - Magenta text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-magenta-bg-white",
+    "prefix": "ccl-magenta-bg-white",
     "body": [
       "console.log(`\\x1b[35m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -593,7 +596,7 @@
 
   "Node Console log - Cyan text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-black",
+    "prefix": "ccl-cyan-bg-black",
     "body": [
       "console.log(`\\x1b[36m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -603,7 +606,7 @@
 
   "Node Console log - Cyan text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-red",
+    "prefix": "ccl-cyan-bg-red",
     "body": [
       "console.log(`\\x1b[36m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -613,7 +616,7 @@
 
   "Node Console log - Cyan text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-green",
+    "prefix": "ccl-cyan-bg-green",
     "body": [
       "console.log(`\\x1b[36m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -623,7 +626,7 @@
 
   "Node Console log - Cyan text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-yellow",
+    "prefix": "ccl-cyan-bg-yellow",
     "body": [
       "console.log(`\\x1b[36m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -633,7 +636,7 @@
 
   "Node Console log - Cyan text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-blue",
+    "prefix": "ccl-cyan-bg-blue",
     "body": [
       "console.log(`\\x1b[36m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -643,7 +646,7 @@
 
   "Node Console log - Cyan text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-magenta",
+    "prefix": "ccl-cyan-bg-magenta",
     "body": [
       "console.log(`\\x1b[36m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -653,7 +656,7 @@
 
   "Node Console log - Cyan text with a white Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-cyan-bg-white",
+    "prefix": "ccl-cyan-bg-white",
     "body": [
       "console.log(`\\x1b[36m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
@@ -663,7 +666,7 @@
 
   "Node Console log - White text with a black Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-black",
+    "prefix": "ccl-white-bg-black",
     "body": [
       "console.log(`\\x1b[37m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
@@ -673,7 +676,7 @@
 
   "Node Console log - White text with a red Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-red",
+    "prefix": "ccl-white-bg-red",
     "body": [
       "console.log(`\\x1b[37m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
@@ -683,7 +686,7 @@
 
   "Node Console log - White text with a green Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-green",
+    "prefix": "ccl-white-bg-green",
     "body": [
       "console.log(`\\x1b[37m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
@@ -693,7 +696,7 @@
 
   "Node Console log - White text with a yellow Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-yellow",
+    "prefix": "ccl-white-bg-yellow",
     "body": [
       "console.log(`\\x1b[37m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
@@ -703,7 +706,7 @@
 
   "Node Console log - White text with a blue Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-blue",
+    "prefix": "ccl-white-bg-blue",
     "body": [
       "console.log(`\\x1b[37m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
@@ -713,7 +716,7 @@
 
   "Node Console log - White text with a magenta Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-magenta",
+    "prefix": "ccl-white-bg-magenta",
     "body": [
       "console.log(`\\x1b[37m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
@@ -723,7 +726,7 @@
 
   "Node Console log - White text with a cyan Background": {
     "scope": "javascript,typescript",
-    "prefix": "ncl-white-bg-cyan",
+    "prefix": "ccl-white-bg-cyan",
     "body": [
       "console.log(`\\x1b[37m\\x1b[46m $1 \\x1b[0m`);",
       "$2"

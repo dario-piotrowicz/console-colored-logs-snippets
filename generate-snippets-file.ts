@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const snippetsFile = "./nodejs-colored-logs.code-snippets"
+const snippetsFile = "./console-colored-logs.code-snippets"
 
 fs.writeFileSync(snippetsFile, '');
 
@@ -20,10 +20,13 @@ print(
           easily identify the outputs you're interested in. If you want to provide proper styling for your node
           application I would suggest to use proper libraries such as https://github.com/chalk/chalk or
           https://github.com/medikoo/cli-color instead.
+
+    Note: the idea for this set of snippets was for them to be used in node applications, but browsers also accept
+          the color codes so the snippets can be used in standard browser js as well.
   */`
 );
 
-const rootPrefix = "ncl";
+const rootPrefix = "ccl";
 
 function printSnippet(snippetName: string, prefix: string, logCommand: string, description: string) {
   print(
