@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const snippetsFile = "./node-console-log.code-snippets"
+const snippetsFile = "./nodejs-colored-logs.code-snippets"
 
 fs.writeFileSync(snippetsFile, '');
 

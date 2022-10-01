@@ -1,1 +1,1 @@
-# nodejs-logs-snippets
+# nodejs-colored-logs-snippets
