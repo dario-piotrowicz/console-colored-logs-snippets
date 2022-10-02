@@ -1,8 +1,9 @@
 {
   "name": "console-colored-logs",
-  "displayName": "console-colored-logs",
+  "displayName": "Console Colored Logs Snippets",
   "description": "Minimal set of snippets for adding colors to console.logs",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "publisher": "dariopiotrowicz",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -21,8 +22,15 @@
       }
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dario-piotrowicz/console-colored-logs-snippets.git"
+  },
+  "icon": "logo.png",
   "scripts": {
-    "build": "ts-node generate-snippets-file.ts"
+    "build": "ts-node generate-snippets-file.ts",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/node": "^18.7.23",
