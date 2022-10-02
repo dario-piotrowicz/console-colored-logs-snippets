@@ -2,13 +2,21 @@
   "name": "console-colored-logs",
   "displayName": "Console Colored Logs Snippets",
   "description": "Minimal set of snippets for adding colors to console.logs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "dariopiotrowicz",
   "engines": {
     "vscode": "^1.71.0"
   },
   "categories": [
-    "Snippets"
+    "Snippets",
+    "Debuggers"
+  ],
+  "markdown": "github",
+  "keywords": [
+    "console.log",
+    "javascript",
+    "typescript",
+    "nodejs"
   ],
   "contributes": {
     "snippets": [
