@@ -15,7 +15,7 @@ const rootPrefix = "ccl";
 function printSnippet(snippetName: string, prefix: string, logCommand: string, description: string) {
   print(
     `
-  "Console Colored log - ${snippetName}": {
+  "${snippetName}": {
     "prefix": "${rootPrefix}-${prefix}",
     "body": [
       "${logCommand}",
@@ -23,10 +23,6 @@ function printSnippet(snippetName: string, prefix: string, logCommand: string, d
     ],
     "description": "${description}"
   },`);
-}
-
-function capitalize(str: string) {
-  return str.charAt(0).toUpperCase() + str.substring(1);
 }
 
 const foregroundColors = {
@@ -56,19 +52,19 @@ const reset = '\\\\x1b[0m';
 
 for ( const [color, code] of Object.entries(foregroundColors) ) {
   printSnippet(
-    `${capitalize(color)} Text`,
+    `console.log with ${color} text`,
     color,
     `console.log(\`${code} $1 ${reset}\`);`,
-    `Console log text colored in ${color} for nodejs`
+    `console.log with its text colored in ${color}`
   );
 }
 
 for ( const [color, code] of Object.entries(backgroundColors) ) {
   printSnippet(
-    `${capitalize(color)} Background`,
+    `console.log with a ${color} background`,
     `bg-${color}`,
     `console.log(\`${code} $1 ${reset}\`);`,
-    `Console log text with a ${color} background for nodejs`
+    `console.log with a ${color} background`
   );
 }
 
@@ -76,10 +72,10 @@ for ( const [foregroundColor, foregroundCode] of Object.entries(foregroundColors
   for ( const [backgroundColor, backgroundCode] of Object.entries(backgroundColors) ) {
     if(foregroundColor !== backgroundColor) {
       printSnippet(
-        `${capitalize(foregroundColor)} text with a ${backgroundColor} background`,
+        `console.log with ${foregroundColor} text and a ${backgroundColor} background`,
         `${foregroundColor}-bg-${backgroundColor}`,
         `console.log(\`${foregroundCode}${backgroundCode} $1 ${reset}\`);`,
-        `Console log text with ${foregroundColor} text and a ${backgroundColor} background for nodejs`
+        `console.log with ${foregroundColor} text and a ${backgroundColor} background`
       );
     }
   }

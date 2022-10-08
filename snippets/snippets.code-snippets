@@ -1,650 +1,650 @@
 {
 
-  "Console Colored log - Black Text": {
+  "console.log with black text": {
     "prefix": "ccl-black",
     "body": [
       "console.log(`\\x1b[30m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in black for nodejs"
+    "description": "console.log with its text colored in black"
   },
 
-  "Console Colored log - Red Text": {
+  "console.log with red text": {
     "prefix": "ccl-red",
     "body": [
       "console.log(`\\x1b[31m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in red for nodejs"
+    "description": "console.log with its text colored in red"
   },
 
-  "Console Colored log - Green Text": {
+  "console.log with green text": {
     "prefix": "ccl-green",
     "body": [
       "console.log(`\\x1b[32m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in green for nodejs"
+    "description": "console.log with its text colored in green"
   },
 
-  "Console Colored log - Yellow Text": {
+  "console.log with yellow text": {
     "prefix": "ccl-yellow",
     "body": [
       "console.log(`\\x1b[33m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in yellow for nodejs"
+    "description": "console.log with its text colored in yellow"
   },
 
-  "Console Colored log - Blue Text": {
+  "console.log with blue text": {
     "prefix": "ccl-blue",
     "body": [
       "console.log(`\\x1b[34m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in blue for nodejs"
+    "description": "console.log with its text colored in blue"
   },
 
-  "Console Colored log - Magenta Text": {
+  "console.log with magenta text": {
     "prefix": "ccl-magenta",
     "body": [
       "console.log(`\\x1b[35m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in magenta for nodejs"
+    "description": "console.log with its text colored in magenta"
   },
 
-  "Console Colored log - Cyan Text": {
+  "console.log with cyan text": {
     "prefix": "ccl-cyan",
     "body": [
       "console.log(`\\x1b[36m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in cyan for nodejs"
+    "description": "console.log with its text colored in cyan"
   },
 
-  "Console Colored log - White Text": {
+  "console.log with white text": {
     "prefix": "ccl-white",
     "body": [
       "console.log(`\\x1b[37m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text colored in white for nodejs"
+    "description": "console.log with its text colored in white"
   },
 
-  "Console Colored log - Black Background": {
+  "console.log with a black background": {
     "prefix": "ccl-bg-black",
     "body": [
       "console.log(`\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a black background for nodejs"
+    "description": "console.log with a black background"
   },
 
-  "Console Colored log - Red Background": {
+  "console.log with a red background": {
     "prefix": "ccl-bg-red",
     "body": [
       "console.log(`\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a red background for nodejs"
+    "description": "console.log with a red background"
   },
 
-  "Console Colored log - Green Background": {
+  "console.log with a green background": {
     "prefix": "ccl-bg-green",
     "body": [
       "console.log(`\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a green background for nodejs"
+    "description": "console.log with a green background"
   },
 
-  "Console Colored log - Yellow Background": {
+  "console.log with a yellow background": {
     "prefix": "ccl-bg-yellow",
     "body": [
       "console.log(`\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a yellow background for nodejs"
+    "description": "console.log with a yellow background"
   },
 
-  "Console Colored log - Blue Background": {
+  "console.log with a blue background": {
     "prefix": "ccl-bg-blue",
     "body": [
       "console.log(`\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a blue background for nodejs"
+    "description": "console.log with a blue background"
   },
 
-  "Console Colored log - Magenta Background": {
+  "console.log with a magenta background": {
     "prefix": "ccl-bg-magenta",
     "body": [
       "console.log(`\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a magenta background for nodejs"
+    "description": "console.log with a magenta background"
   },
 
-  "Console Colored log - Cyan Background": {
+  "console.log with a cyan background": {
     "prefix": "ccl-bg-cyan",
     "body": [
       "console.log(`\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a cyan background for nodejs"
+    "description": "console.log with a cyan background"
   },
 
-  "Console Colored log - White Background": {
+  "console.log with a white background": {
     "prefix": "ccl-bg-white",
     "body": [
       "console.log(`\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with a white background for nodejs"
+    "description": "console.log with a white background"
   },
 
-  "Console Colored log - Black text with a red background": {
+  "console.log with black text and a red background": {
     "prefix": "ccl-black-bg-red",
     "body": [
       "console.log(`\\x1b[30m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a red background for nodejs"
+    "description": "console.log with black text and a red background"
   },
 
-  "Console Colored log - Black text with a green background": {
+  "console.log with black text and a green background": {
     "prefix": "ccl-black-bg-green",
     "body": [
       "console.log(`\\x1b[30m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a green background for nodejs"
+    "description": "console.log with black text and a green background"
   },
 
-  "Console Colored log - Black text with a yellow background": {
+  "console.log with black text and a yellow background": {
     "prefix": "ccl-black-bg-yellow",
     "body": [
       "console.log(`\\x1b[30m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a yellow background for nodejs"
+    "description": "console.log with black text and a yellow background"
   },
 
-  "Console Colored log - Black text with a blue background": {
+  "console.log with black text and a blue background": {
     "prefix": "ccl-black-bg-blue",
     "body": [
       "console.log(`\\x1b[30m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a blue background for nodejs"
+    "description": "console.log with black text and a blue background"
   },
 
-  "Console Colored log - Black text with a magenta background": {
+  "console.log with black text and a magenta background": {
     "prefix": "ccl-black-bg-magenta",
     "body": [
       "console.log(`\\x1b[30m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a magenta background for nodejs"
+    "description": "console.log with black text and a magenta background"
   },
 
-  "Console Colored log - Black text with a cyan background": {
+  "console.log with black text and a cyan background": {
     "prefix": "ccl-black-bg-cyan",
     "body": [
       "console.log(`\\x1b[30m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a cyan background for nodejs"
+    "description": "console.log with black text and a cyan background"
   },
 
-  "Console Colored log - Black text with a white background": {
+  "console.log with black text and a white background": {
     "prefix": "ccl-black-bg-white",
     "body": [
       "console.log(`\\x1b[30m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with black text and a white background for nodejs"
+    "description": "console.log with black text and a white background"
   },
 
-  "Console Colored log - Red text with a black background": {
+  "console.log with red text and a black background": {
     "prefix": "ccl-red-bg-black",
     "body": [
       "console.log(`\\x1b[31m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a black background for nodejs"
+    "description": "console.log with red text and a black background"
   },
 
-  "Console Colored log - Red text with a green background": {
+  "console.log with red text and a green background": {
     "prefix": "ccl-red-bg-green",
     "body": [
       "console.log(`\\x1b[31m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a green background for nodejs"
+    "description": "console.log with red text and a green background"
   },
 
-  "Console Colored log - Red text with a yellow background": {
+  "console.log with red text and a yellow background": {
     "prefix": "ccl-red-bg-yellow",
     "body": [
       "console.log(`\\x1b[31m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a yellow background for nodejs"
+    "description": "console.log with red text and a yellow background"
   },
 
-  "Console Colored log - Red text with a blue background": {
+  "console.log with red text and a blue background": {
     "prefix": "ccl-red-bg-blue",
     "body": [
       "console.log(`\\x1b[31m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a blue background for nodejs"
+    "description": "console.log with red text and a blue background"
   },
 
-  "Console Colored log - Red text with a magenta background": {
+  "console.log with red text and a magenta background": {
     "prefix": "ccl-red-bg-magenta",
     "body": [
       "console.log(`\\x1b[31m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a magenta background for nodejs"
+    "description": "console.log with red text and a magenta background"
   },
 
-  "Console Colored log - Red text with a cyan background": {
+  "console.log with red text and a cyan background": {
     "prefix": "ccl-red-bg-cyan",
     "body": [
       "console.log(`\\x1b[31m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a cyan background for nodejs"
+    "description": "console.log with red text and a cyan background"
   },
 
-  "Console Colored log - Red text with a white background": {
+  "console.log with red text and a white background": {
     "prefix": "ccl-red-bg-white",
     "body": [
       "console.log(`\\x1b[31m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with red text and a white background for nodejs"
+    "description": "console.log with red text and a white background"
   },
 
-  "Console Colored log - Green text with a black background": {
+  "console.log with green text and a black background": {
     "prefix": "ccl-green-bg-black",
     "body": [
       "console.log(`\\x1b[32m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a black background for nodejs"
+    "description": "console.log with green text and a black background"
   },
 
-  "Console Colored log - Green text with a red background": {
+  "console.log with green text and a red background": {
     "prefix": "ccl-green-bg-red",
     "body": [
       "console.log(`\\x1b[32m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a red background for nodejs"
+    "description": "console.log with green text and a red background"
   },
 
-  "Console Colored log - Green text with a yellow background": {
+  "console.log with green text and a yellow background": {
     "prefix": "ccl-green-bg-yellow",
     "body": [
       "console.log(`\\x1b[32m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a yellow background for nodejs"
+    "description": "console.log with green text and a yellow background"
   },
 
-  "Console Colored log - Green text with a blue background": {
+  "console.log with green text and a blue background": {
     "prefix": "ccl-green-bg-blue",
     "body": [
       "console.log(`\\x1b[32m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a blue background for nodejs"
+    "description": "console.log with green text and a blue background"
   },
 
-  "Console Colored log - Green text with a magenta background": {
+  "console.log with green text and a magenta background": {
     "prefix": "ccl-green-bg-magenta",
     "body": [
       "console.log(`\\x1b[32m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a magenta background for nodejs"
+    "description": "console.log with green text and a magenta background"
   },
 
-  "Console Colored log - Green text with a cyan background": {
+  "console.log with green text and a cyan background": {
     "prefix": "ccl-green-bg-cyan",
     "body": [
       "console.log(`\\x1b[32m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a cyan background for nodejs"
+    "description": "console.log with green text and a cyan background"
   },
 
-  "Console Colored log - Green text with a white background": {
+  "console.log with green text and a white background": {
     "prefix": "ccl-green-bg-white",
     "body": [
       "console.log(`\\x1b[32m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with green text and a white background for nodejs"
+    "description": "console.log with green text and a white background"
   },
 
-  "Console Colored log - Yellow text with a black background": {
+  "console.log with yellow text and a black background": {
     "prefix": "ccl-yellow-bg-black",
     "body": [
       "console.log(`\\x1b[33m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a black background for nodejs"
+    "description": "console.log with yellow text and a black background"
   },
 
-  "Console Colored log - Yellow text with a red background": {
+  "console.log with yellow text and a red background": {
     "prefix": "ccl-yellow-bg-red",
     "body": [
       "console.log(`\\x1b[33m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a red background for nodejs"
+    "description": "console.log with yellow text and a red background"
   },
 
-  "Console Colored log - Yellow text with a green background": {
+  "console.log with yellow text and a green background": {
     "prefix": "ccl-yellow-bg-green",
     "body": [
       "console.log(`\\x1b[33m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a green background for nodejs"
+    "description": "console.log with yellow text and a green background"
   },
 
-  "Console Colored log - Yellow text with a blue background": {
+  "console.log with yellow text and a blue background": {
     "prefix": "ccl-yellow-bg-blue",
     "body": [
       "console.log(`\\x1b[33m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a blue background for nodejs"
+    "description": "console.log with yellow text and a blue background"
   },
 
-  "Console Colored log - Yellow text with a magenta background": {
+  "console.log with yellow text and a magenta background": {
     "prefix": "ccl-yellow-bg-magenta",
     "body": [
       "console.log(`\\x1b[33m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a magenta background for nodejs"
+    "description": "console.log with yellow text and a magenta background"
   },
 
-  "Console Colored log - Yellow text with a cyan background": {
+  "console.log with yellow text and a cyan background": {
     "prefix": "ccl-yellow-bg-cyan",
     "body": [
       "console.log(`\\x1b[33m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a cyan background for nodejs"
+    "description": "console.log with yellow text and a cyan background"
   },
 
-  "Console Colored log - Yellow text with a white background": {
+  "console.log with yellow text and a white background": {
     "prefix": "ccl-yellow-bg-white",
     "body": [
       "console.log(`\\x1b[33m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with yellow text and a white background for nodejs"
+    "description": "console.log with yellow text and a white background"
   },
 
-  "Console Colored log - Blue text with a black background": {
+  "console.log with blue text and a black background": {
     "prefix": "ccl-blue-bg-black",
     "body": [
       "console.log(`\\x1b[34m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a black background for nodejs"
+    "description": "console.log with blue text and a black background"
   },
 
-  "Console Colored log - Blue text with a red background": {
+  "console.log with blue text and a red background": {
     "prefix": "ccl-blue-bg-red",
     "body": [
       "console.log(`\\x1b[34m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a red background for nodejs"
+    "description": "console.log with blue text and a red background"
   },
 
-  "Console Colored log - Blue text with a green background": {
+  "console.log with blue text and a green background": {
     "prefix": "ccl-blue-bg-green",
     "body": [
       "console.log(`\\x1b[34m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a green background for nodejs"
+    "description": "console.log with blue text and a green background"
   },
 
-  "Console Colored log - Blue text with a yellow background": {
+  "console.log with blue text and a yellow background": {
     "prefix": "ccl-blue-bg-yellow",
     "body": [
       "console.log(`\\x1b[34m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a yellow background for nodejs"
+    "description": "console.log with blue text and a yellow background"
   },
 
-  "Console Colored log - Blue text with a magenta background": {
+  "console.log with blue text and a magenta background": {
     "prefix": "ccl-blue-bg-magenta",
     "body": [
       "console.log(`\\x1b[34m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a magenta background for nodejs"
+    "description": "console.log with blue text and a magenta background"
   },
 
-  "Console Colored log - Blue text with a cyan background": {
+  "console.log with blue text and a cyan background": {
     "prefix": "ccl-blue-bg-cyan",
     "body": [
       "console.log(`\\x1b[34m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a cyan background for nodejs"
+    "description": "console.log with blue text and a cyan background"
   },
 
-  "Console Colored log - Blue text with a white background": {
+  "console.log with blue text and a white background": {
     "prefix": "ccl-blue-bg-white",
     "body": [
       "console.log(`\\x1b[34m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with blue text and a white background for nodejs"
+    "description": "console.log with blue text and a white background"
   },
 
-  "Console Colored log - Magenta text with a black background": {
+  "console.log with magenta text and a black background": {
     "prefix": "ccl-magenta-bg-black",
     "body": [
       "console.log(`\\x1b[35m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a black background for nodejs"
+    "description": "console.log with magenta text and a black background"
   },
 
-  "Console Colored log - Magenta text with a red background": {
+  "console.log with magenta text and a red background": {
     "prefix": "ccl-magenta-bg-red",
     "body": [
       "console.log(`\\x1b[35m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a red background for nodejs"
+    "description": "console.log with magenta text and a red background"
   },
 
-  "Console Colored log - Magenta text with a green background": {
+  "console.log with magenta text and a green background": {
     "prefix": "ccl-magenta-bg-green",
     "body": [
       "console.log(`\\x1b[35m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a green background for nodejs"
+    "description": "console.log with magenta text and a green background"
   },
 
-  "Console Colored log - Magenta text with a yellow background": {
+  "console.log with magenta text and a yellow background": {
     "prefix": "ccl-magenta-bg-yellow",
     "body": [
       "console.log(`\\x1b[35m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a yellow background for nodejs"
+    "description": "console.log with magenta text and a yellow background"
   },
 
-  "Console Colored log - Magenta text with a blue background": {
+  "console.log with magenta text and a blue background": {
     "prefix": "ccl-magenta-bg-blue",
     "body": [
       "console.log(`\\x1b[35m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a blue background for nodejs"
+    "description": "console.log with magenta text and a blue background"
   },
 
-  "Console Colored log - Magenta text with a cyan background": {
+  "console.log with magenta text and a cyan background": {
     "prefix": "ccl-magenta-bg-cyan",
     "body": [
       "console.log(`\\x1b[35m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a cyan background for nodejs"
+    "description": "console.log with magenta text and a cyan background"
   },
 
-  "Console Colored log - Magenta text with a white background": {
+  "console.log with magenta text and a white background": {
     "prefix": "ccl-magenta-bg-white",
     "body": [
       "console.log(`\\x1b[35m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with magenta text and a white background for nodejs"
+    "description": "console.log with magenta text and a white background"
   },
 
-  "Console Colored log - Cyan text with a black background": {
+  "console.log with cyan text and a black background": {
     "prefix": "ccl-cyan-bg-black",
     "body": [
       "console.log(`\\x1b[36m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a black background for nodejs"
+    "description": "console.log with cyan text and a black background"
   },
 
-  "Console Colored log - Cyan text with a red background": {
+  "console.log with cyan text and a red background": {
     "prefix": "ccl-cyan-bg-red",
     "body": [
       "console.log(`\\x1b[36m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a red background for nodejs"
+    "description": "console.log with cyan text and a red background"
   },
 
-  "Console Colored log - Cyan text with a green background": {
+  "console.log with cyan text and a green background": {
     "prefix": "ccl-cyan-bg-green",
     "body": [
       "console.log(`\\x1b[36m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a green background for nodejs"
+    "description": "console.log with cyan text and a green background"
   },
 
-  "Console Colored log - Cyan text with a yellow background": {
+  "console.log with cyan text and a yellow background": {
     "prefix": "ccl-cyan-bg-yellow",
     "body": [
       "console.log(`\\x1b[36m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a yellow background for nodejs"
+    "description": "console.log with cyan text and a yellow background"
   },
 
-  "Console Colored log - Cyan text with a blue background": {
+  "console.log with cyan text and a blue background": {
     "prefix": "ccl-cyan-bg-blue",
     "body": [
       "console.log(`\\x1b[36m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a blue background for nodejs"
+    "description": "console.log with cyan text and a blue background"
   },
 
-  "Console Colored log - Cyan text with a magenta background": {
+  "console.log with cyan text and a magenta background": {
     "prefix": "ccl-cyan-bg-magenta",
     "body": [
       "console.log(`\\x1b[36m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a magenta background for nodejs"
+    "description": "console.log with cyan text and a magenta background"
   },
 
-  "Console Colored log - Cyan text with a white background": {
+  "console.log with cyan text and a white background": {
     "prefix": "ccl-cyan-bg-white",
     "body": [
       "console.log(`\\x1b[36m\\x1b[47m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with cyan text and a white background for nodejs"
+    "description": "console.log with cyan text and a white background"
   },
 
-  "Console Colored log - White text with a black background": {
+  "console.log with white text and a black background": {
     "prefix": "ccl-white-bg-black",
     "body": [
       "console.log(`\\x1b[37m\\x1b[40m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a black background for nodejs"
+    "description": "console.log with white text and a black background"
   },
 
-  "Console Colored log - White text with a red background": {
+  "console.log with white text and a red background": {
     "prefix": "ccl-white-bg-red",
     "body": [
       "console.log(`\\x1b[37m\\x1b[41m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a red background for nodejs"
+    "description": "console.log with white text and a red background"
   },
 
-  "Console Colored log - White text with a green background": {
+  "console.log with white text and a green background": {
     "prefix": "ccl-white-bg-green",
     "body": [
       "console.log(`\\x1b[37m\\x1b[42m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a green background for nodejs"
+    "description": "console.log with white text and a green background"
   },
 
-  "Console Colored log - White text with a yellow background": {
+  "console.log with white text and a yellow background": {
     "prefix": "ccl-white-bg-yellow",
     "body": [
       "console.log(`\\x1b[37m\\x1b[43m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a yellow background for nodejs"
+    "description": "console.log with white text and a yellow background"
   },
 
-  "Console Colored log - White text with a blue background": {
+  "console.log with white text and a blue background": {
     "prefix": "ccl-white-bg-blue",
     "body": [
       "console.log(`\\x1b[37m\\x1b[44m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a blue background for nodejs"
+    "description": "console.log with white text and a blue background"
   },
 
-  "Console Colored log - White text with a magenta background": {
+  "console.log with white text and a magenta background": {
     "prefix": "ccl-white-bg-magenta",
     "body": [
       "console.log(`\\x1b[37m\\x1b[45m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a magenta background for nodejs"
+    "description": "console.log with white text and a magenta background"
   },
 
-  "Console Colored log - White text with a cyan background": {
+  "console.log with white text and a cyan background": {
     "prefix": "ccl-white-bg-cyan",
     "body": [
       "console.log(`\\x1b[37m\\x1b[46m $1 \\x1b[0m`);",
       "$2"
     ],
-    "description": "Console log text with white text and a cyan background for nodejs"
+    "description": "console.log with white text and a cyan background"
   },
 }
