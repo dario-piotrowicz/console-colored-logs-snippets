@@ -2,7 +2,7 @@
   "name": "console-colored-logs",
   "displayName": "Console Colored Logs Snippets",
   "description": "Minimal set of snippets for adding colors to console.logs",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "publisher": "dariopiotrowicz",
   "engines": {
     "vscode": "^1.72.0"
@@ -49,29 +49,31 @@
       {
         "command": "console-colored-logs.enableHighlights",
         "title": "Enable console-colored-logs highlights",
-        "enablement": "!config.console-colored-logs.showHighlights"
+        "enablement": "!config.console-colored-logs.highlights.enabled"
       },
       {
         "command": "console-colored-logs.disableHighlights",
         "title": "Disable console-colored-logs highlights",
-        "enablement": "config.console-colored-logs.showHighlights"
+        "enablement": "config.console-colored-logs.highlights.enabled"
       }
     ],
     "configuration": {
       "title": "Console Colored Logs",
+      "type": "object",
+      "additionalProperties": false,
       "properties": {
-        "console-colored-logs.highlights.showHighlights": {
+        "console-colored-logs.highlights.enabled": {
           "order": 0,
           "type": "boolean",
           "default": false,
-          "description": "Show highlights for the inserted color logs matching the used colors"
+          "markdownDescription": "__**Experimental**__\n\n Enable/Disable code highlights for the generated `console.log`s."
         },
         "console-colored-logs.highlights.range": {
           "order": 1,
           "type": "string",
           "default": "content",
           "enum": ["full", "content"],
-          "description": "Specifies to which range/area the highlight should be applied",
+          "description": "Specifies to which range/area the highlight should be applied.",
           "enumDescriptions": [
             "To the whole console.log call",
             "Only to the content inside the console.log call"

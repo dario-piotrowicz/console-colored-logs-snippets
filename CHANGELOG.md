@@ -1,9 +1,8 @@
 # Change Log
 
-All notable changes to the "console-colored-logs" extension will be documented in this file.
+## 0.0.13
+Added Experimental highlights feature (WIP, off by default)
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## Initial release
 
-## [Unreleased]
-
-- Initial release
+Initial release of extension with snippets

@@ -5,13 +5,13 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('"console-colored-logs" extension active');
 
 	context.subscriptions.push(vscode.commands.registerCommand('console-colored-logs.enableHighlights', async () => {
-    await vscode.workspace.getConfiguration('console-colored-logs').update('highlights.showHighlights', true, true);
+    await vscode.workspace.getConfiguration('console-colored-logs').update('highlights.enabled', true, true);
     vscode.window.showInformationMessage('console-colored-logs highlights enabled');
     updateActiveTextEditorHighlights();
 	}));
 
   context.subscriptions.push(vscode.commands.registerCommand('console-colored-logs.disableHighlights', async () => {
-    await vscode.workspace.getConfiguration('console-colored-logs').update('highlights.showHighlights', false, true);
+    await vscode.workspace.getConfiguration('console-colored-logs').update('highlights.enabled', false, true);
 		vscode.window.showInformationMessage('console-colored-logs highlights disabled');
     clearDecorations();
     updateActiveTextEditorHighlights();
@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function updateActiveTextEditorHighlights() {
-  const showHighlights = !!vscode.workspace.getConfiguration('console-colored-logs').get('highlights.showHighlights');
+  const showHighlights = !!vscode.workspace.getConfiguration('console-colored-logs').get('highlights.enabled');
 
   if (!showHighlights || !vscode.window.activeTextEditor?.document) return;
 
