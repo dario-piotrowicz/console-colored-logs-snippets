@@ -10,11 +10,11 @@ After installing the extension the snippets will be immediately available in jav
 
 There are three type of snippets:
 
-| snippet      | result  |
-|--------------|---------|
-|`ccl-X`       | a console log with its text colored `X`        |
-|`ccl-bg-Y`       | a console log with its background colored `Y`        |
-|`ccl-X-bg-Y`       | a console log with its text colored `X` and its background colored `Y`        |
+| snippet     | result                                                                 |
+|-------------|------------------------------------------------------------------------|
+|`ccl-X`      | a console log with its text colored `X`                                |
+|`ccl-bg-Y`   | a console log with its background colored `Y`                          |
+|`ccl-X-bg-Y` | a console log with its text colored `X` and its background colored `Y` |
 
 Where `X` and `Y` indicate one of the following colors:
 - `black`
