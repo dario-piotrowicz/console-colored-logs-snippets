@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { backgroundColorCodes, backgroundColorCodeToColorNameMap, ColorName, colorNames, foregroundColorCodes, foregroundColorCodeToColorNameMap, mapColorCodesToForegroundBackgroundColorNames, resetCode, foregroundBackgroundColorCodes } from './colors';
+import { backgroundColorCodes, backgroundColorCodeToColorNameMap, ColorName, colorNames, foregroundColorCodes, foregroundColorCodeToColorNameMap, mapColorCodesToForegroundBackgroundColorNames, resetCode, foregroundBackgroundColorCodes, colorNameToHexMap } from './colors';
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('"console-colored-logs" extension active');
@@ -78,14 +78,14 @@ for (const colorName of Object.values(colorNames)) {
   });
   decorationTypesMap.set(`ccl-${colorName}`, decorationType);
   const bgDecorationType = vscode.window.createTextEditorDecorationType({
-    backgroundColor: colorName,
+    backgroundColor: `${colorNameToHexMap[colorName]}30`,
   });
   decorationTypesMap.set(`ccl-bg-${colorName}`, bgDecorationType);
   for (const bgColorName of Object.values(colorNames)) {
     if(bgColorName !== colorName) {
       const decorationType = vscode.window.createTextEditorDecorationType({
         color: colorName,
-        backgroundColor: bgColorName,
+        backgroundColor: `${colorNameToHexMap[bgColorName]}30`,
       });
       decorationTypesMap.set(`ccl-${colorName}-bg-${bgColorName}`, decorationType);
     }

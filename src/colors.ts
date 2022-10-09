@@ -87,3 +87,13 @@ export const foregroundBackgroundColorCodes = foregroundColorCodes.reduce(
 
 export const resetCode = '\\\\x1b[0m';
 
+export const colorNameToHexMap: Record<ColorName, string> = {
+  [colorNames.black]: "#000000",
+  [colorNames.red]: "#FF0000",
+  [colorNames.green]: "#008000",
+  [colorNames.yellow]: "#FFFF00",
+  [colorNames.blue]: "#0000FF",
+  [colorNames.magenta]: "#FF00FF",
+  [colorNames.cyan]: "#00FFFF",
+  [colorNames.white]: "#FFFFFF",
+};
