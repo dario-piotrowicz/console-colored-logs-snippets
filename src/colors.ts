@@ -61,6 +61,7 @@ export const backgroundColorCodeToColorNameMap: Record<string, ColorName> = {
 export const backgroundColorCodes = Object.keys(backgroundColorCodeToColorNameMap);
 
 const codesToFbNameRegex = /(\\\\x1b\[\d\dm)(\\\\x1b\[\d\dm)/;
+
 export function mapColorCodesToForegroundBackgroundColorNames(colorCodes: string): [ColorName, ColorName]|null {
   const match = codesToFbNameRegex.exec(colorCodes);
   if(!match) return null;
@@ -74,16 +75,16 @@ export function mapColorCodesToForegroundBackgroundColorNames(colorCodes: string
   return [foregroundColorName, backgroundColorName];
 }
 
-export const foregroundBackgroundColorCodes = foregroundColorCodes.reduce(
-  (fbColorCodes, foregroundColorCode) => {
-    const foregroundColorName = foregroundColorCodeToColorNameMap[foregroundColorCode];
-    return [
-    ...fbColorCodes,
-    ...backgroundColorCodes.filter(
-      backgroundColorCode =>
-        backgroundColorCodeToColorNameMap[backgroundColorCode] !== foregroundColorName
-    ).map(backgroundColorCode => `${foregroundColorCode}${backgroundColorCode}`),
-  ]}, [] as string[]);
+export const foregroundBackgroundColorCodes: string[] = [];
+for (const foregroundColorCode of foregroundColorCodes) {
+  const foregroundColorName = foregroundColorCodeToColorNameMap[foregroundColorCode];
+  for (const backgroundColorCode of backgroundColorCodes) {
+    const backgroundColorName = backgroundColorCodeToColorNameMap[backgroundColorCode];
+    if(foregroundColorName !== backgroundColorName) {
+      foregroundBackgroundColorCodes.push(`${foregroundColorCode}${backgroundColorCode}`);
+    }
+  }
+}
 
 export const resetCode = '\\\\x1b[0m';
 
