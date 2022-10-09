@@ -5,13 +5,13 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('"console-colored-logs" extension active');
 
 	context.subscriptions.push(vscode.commands.registerCommand('console-colored-logs.enableHighlights', async () => {
-    await vscode.workspace.getConfiguration('console-colored-logs').update('showHighlights', true, true);
+    await vscode.workspace.getConfiguration('console-colored-logs').update('highlights.showHighlights', true, true);
     vscode.window.showInformationMessage('console-colored-logs highlights enabled');
     updateActiveTextEditorHighlights();
 	}));
 
   context.subscriptions.push(vscode.commands.registerCommand('console-colored-logs.disableHighlights', async () => {
-    await vscode.workspace.getConfiguration('console-colored-logs').update('showHighlights', false, true);
+    await vscode.workspace.getConfiguration('console-colored-logs').update('highlights.showHighlights', false, true);
 		vscode.window.showInformationMessage('console-colored-logs highlights disabled');
     clearDecorations();
     updateActiveTextEditorHighlights();
@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function updateActiveTextEditorHighlights() {
-  const showHighlights = !!vscode.workspace.getConfiguration('console-colored-logs').get('showHighlights');
+  const showHighlights = !!vscode.workspace.getConfiguration('console-colored-logs').get('highlights.showHighlights');
 
   if (!showHighlights || !vscode.window.activeTextEditor?.document) return;
 
@@ -35,7 +35,7 @@ function updateActiveTextEditorHighlights() {
         ...foregroundBackgroundColorCodes,
         ...foregroundColorCodes,
         ...backgroundColorCodes,
-      ].map(code => code.replace(/\[/g, '\\[')).join('|')})[\\s\\S]*?${resetCode.replace('[', '\\[')
+      ].map(code => code.replace(/\[/g, '\\[')).join('|')})([\\s\\S]*?)${resetCode.replace('[', '\\[')
     }\`\\);`
     , 'g');
   const decorationTypesWithRanges = new Map<vscode.TextEditorDecorationType, vscode.Range[]>();
@@ -43,17 +43,19 @@ function updateActiveTextEditorHighlights() {
   while (match = pattern.exec(text)) {
     const colorCode = match[1];
 
-    const colorName = foregroundColorCodeToColorNameMap[colorCode.replace('\\x','\\\\x')];
-    console.log(`\x1b[32m ${JSON.stringify({colorCode, colorName})} \x1b[0m`);
-
-    const startPos = vscode.window.activeTextEditor.document.positionAt(match.index);
-    const endPos = vscode.window.activeTextEditor.document.positionAt(match.index + match[0].length);
 
     const decorationType = getDecorationType(colorCode);
     if(decorationType){
       if (!decorationTypesWithRanges.has(decorationType)) {
         decorationTypesWithRanges.set(decorationType, []);
       }
+      const range = vscode.workspace.getConfiguration('console-colored-logs').get('highlights.range');
+
+      const startIdx = match.index + (range === 'full' ? 0 : "console.log(`".length + match[1].length);
+      const endIdx = startIdx + match[range === 'full' ? 0 : 2].length;
+
+      const startPos = vscode.window.activeTextEditor.document.positionAt(startIdx);
+      const endPos = vscode.window.activeTextEditor.document.positionAt(endIdx);
       decorationTypesWithRanges.get(decorationType)!.push(new vscode.Range(startPos, endPos));
     }
   }

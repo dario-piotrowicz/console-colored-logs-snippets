@@ -60,10 +60,22 @@
     "configuration": {
       "title": "Console Colored Logs",
       "properties": {
-        "console-colored-logs.showHighlights": {
+        "console-colored-logs.highlights.showHighlights": {
+          "order": 0,
           "type": "boolean",
           "default": false,
           "description": "Show highlights for the inserted color logs matching the used colors"
+        },
+        "console-colored-logs.highlights.range": {
+          "order": 1,
+          "type": "string",
+          "default": "content",
+          "enum": ["full", "content"],
+          "description": "Specifies to which range/area the highlight should be applied",
+          "enumDescriptions": [
+            "To the whole console.log call",
+            "Only to the content inside the console.log call"
+          ]
         }
       }
     }
