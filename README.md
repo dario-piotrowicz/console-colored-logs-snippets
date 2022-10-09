@@ -32,5 +32,5 @@ Where `X` and `Y` indicate one of the following colors:
 
 - Source for the color codes: [abritinthebay/consoleColors.js](https://gist.github.com/abritinthebay/d80eb99b2726c83feb0d97eab95206c4).
 
-- The purpose for these snippets is for quickly styling the \`console.log\`s when debugging to allow you to
+- The purpose for these snippets is for quickly styling the `console.log`s when debugging to allow you to
 easily identify the outputs you're interested in. If you want to provide proper styling for your application I would suggest to use proper libraries instead, such as [chalk](https://github.com/chalk/chalk) or [cli-color](https://github.com/medikoo/cli-color) for nodejs apps.
