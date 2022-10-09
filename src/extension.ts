@@ -29,20 +29,10 @@ function updateActiveTextEditorHighlights() {
 
   clearDecorations();
   let match;
-  const pattern = new RegExp(
-    `console\\.log\\(\`(${
-      [
-        ...foregroundBackgroundColorCodes,
-        ...foregroundColorCodes,
-        ...backgroundColorCodes,
-      ].map(code => code.replace(/\[/g, '\\[')).join('|')})([\\s\\S]*?)${resetCode.replace('[', '\\[')
-    }\`\\);`
-    , 'g');
   const decorationTypesWithRanges = new Map<vscode.TextEditorDecorationType, vscode.Range[]>();
 
-  while (match = pattern.exec(text)) {
+  while (match = consoleColoredLogRegex.exec(text)) {
     const colorCode = match[1];
-
 
     const decorationType = getDecorationType(colorCode);
     if(decorationType){
@@ -69,6 +59,19 @@ function clearDecorations() {
     vscode.window.activeTextEditor?.setDecorations(decorationType, []);
   }
 }
+
+const consoleColoredLogRegex = new RegExp(
+  'console\\.log\\(\`'+
+  `(${[
+      ...foregroundBackgroundColorCodes,
+      ...foregroundColorCodes,
+      ...backgroundColorCodes,
+    ].map(code => code.replace(/\[/g, '\\[')).join('|')
+    })` +
+    '([\\s\\S]*?)' +
+    `${resetCode.replace('[', '\\[')}\`\\);`,
+  'g'
+);
 
 type SnippetName = `ccl-${ColorName}` | `ccl-bg-${ColorName}` |  `ccl-${ColorName}-bg-${ColorName}`;
 
