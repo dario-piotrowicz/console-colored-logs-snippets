@@ -1,17 +1,5 @@
 import * as vscode from 'vscode';
-import { foregroundColorCodes, resetCode } from './colors';
-
-  // TODO: there need to be different styles for the different logs
-  const DEFAULT_STYLE = {
-    color: "#fff",
-    backgroundColor: "#414141",
-    border: '1px solid currentColor',
-    borderRadius: '3px',
-    padding: '2px',
-    margin: '2px',
-  };
-
-  const decorationType = vscode.window.createTextEditorDecorationType(DEFAULT_STYLE);
+import { backgroundColorCodes, backgroundColorCodeToColorNameMap, ColorName, colorNames, foregroundColorCodes, foregroundColorCodeToColorNameMap, mapColorCodesToForegroundBackgroundColorNames, resetCode, foregroundBackgroundColorCodes } from './colors';
 
 export function activate(context: vscode.ExtensionContext) {
 	console.log('"console-colored-logs" extension active');
@@ -25,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(vscode.commands.registerCommand('console-colored-logs.disableHighlights', async () => {
     await vscode.workspace.getConfiguration('console-colored-logs').update('showHighlights', false, true);
 		vscode.window.showInformationMessage('console-colored-logs highlights disabled');
-    vscode.window.activeTextEditor?.setDecorations(decorationType, []);
+    clearDecorations();
     updateActiveTextEditorHighlights();
 	}));
 
@@ -39,20 +27,99 @@ function updateActiveTextEditorHighlights() {
 
   const text = vscode.window.activeTextEditor.document.getText();
 
-  vscode.window.activeTextEditor.setDecorations(decorationType, []);
+  clearDecorations();
   let match;
   const pattern = new RegExp(
-    `console\\.log\\(\`(?:${
-      foregroundColorCodes.map(code => code.replace('[', '\\[')).join('|')})[\\s\\S]*?${resetCode.replace('[', '\\[')
+    `console\\.log\\(\`(${
+      [
+        ...foregroundBackgroundColorCodes,
+        ...foregroundColorCodes,
+        ...backgroundColorCodes,
+      ].map(code => code.replace(/\[/g, '\\[')).join('|')})[\\s\\S]*?${resetCode.replace('[', '\\[')
     }\`\\);`
     , 'g');
-  const ranges: vscode.Range[] = [];
+  const decorationTypesWithRanges = new Map<vscode.TextEditorDecorationType, vscode.Range[]>();
+
   while (match = pattern.exec(text)) {
-      const startPos = vscode.window.activeTextEditor.document.positionAt(match.index);
-      const endPos = vscode.window.activeTextEditor.document.positionAt(match.index + match[0].length);
-      ranges.push(new vscode.Range(startPos, endPos));
+    const colorCode = match[1];
+
+    const colorName = foregroundColorCodeToColorNameMap[colorCode.replace('\\x','\\\\x')];
+    console.log(`\x1b[32m ${JSON.stringify({colorCode, colorName})} \x1b[0m`);
+
+    const startPos = vscode.window.activeTextEditor.document.positionAt(match.index);
+    const endPos = vscode.window.activeTextEditor.document.positionAt(match.index + match[0].length);
+
+    const decorationType = getDecorationType(colorCode);
+    if(decorationType){
+      if (!decorationTypesWithRanges.has(decorationType)) {
+        decorationTypesWithRanges.set(decorationType, []);
+      }
+      decorationTypesWithRanges.get(decorationType)!.push(new vscode.Range(startPos, endPos));
+    }
   }
-  vscode.window.activeTextEditor.setDecorations(decorationType, ranges);
+  for (const [decorationType, ranges] of decorationTypesWithRanges.entries()) {
+    vscode.window.activeTextEditor.setDecorations(decorationType, ranges);
+  }
+}
+
+function clearDecorations() {
+  for (const decorationType of decorationTypesMap.values() ) {
+    vscode.window.activeTextEditor?.setDecorations(decorationType, []);
+  }
+}
+
+type SnippetName = `ccl-${ColorName}` | `ccl-bg-${ColorName}` |  `ccl-${ColorName}-bg-${ColorName}`;
+
+const decorationTypesMap = new Map<SnippetName, vscode.TextEditorDecorationType>();
+
+for (const colorName of Object.values(colorNames)) {
+  const decorationType = vscode.window.createTextEditorDecorationType({
+    color: colorName,
+  });
+  decorationTypesMap.set(`ccl-${colorName}`, decorationType);
+  const bgDecorationType = vscode.window.createTextEditorDecorationType({
+    backgroundColor: colorName,
+  });
+  decorationTypesMap.set(`ccl-bg-${colorName}`, bgDecorationType);
+  for (const bgColorName of Object.values(colorNames)) {
+    if(bgColorName !== colorName) {
+      const decorationType = vscode.window.createTextEditorDecorationType({
+        color: colorName,
+        backgroundColor: bgColorName,
+      });
+      decorationTypesMap.set(`ccl-${colorName}-bg-${bgColorName}`, decorationType);
+    }
+  }
+}
+
+function getDecorationType(colorCode: string): vscode.TextEditorDecorationType|null {
+  colorCode = colorCode.replace(/\\x/g,'\\\\x');
+  const foregroundBackgroundColorNames = mapColorCodesToForegroundBackgroundColorNames(colorCode);
+  if(foregroundBackgroundColorNames) {
+    const [foregroundColorName, backgroundColorName] = foregroundBackgroundColorNames;
+    const snippetName: SnippetName = `ccl-${foregroundColorName}-bg-${backgroundColorName}`;
+    if(decorationTypesMap.has(snippetName)) {
+      return decorationTypesMap.get(snippetName)!;
+    }
+  }
+
+  const foregroundColorName = foregroundColorCodeToColorNameMap[colorCode];
+  if(foregroundColorName) {
+    const snippetName: SnippetName = `ccl-${foregroundColorName}`;
+    if(decorationTypesMap.has(snippetName)) {
+      return decorationTypesMap.get(snippetName)!;
+    }
+  }
+
+  const backgroundColorName = backgroundColorCodeToColorNameMap[colorCode];
+  if(backgroundColorName) {
+    const snippetName: SnippetName = `ccl-bg-${backgroundColorName}`;
+    if(decorationTypesMap.has(snippetName)) {
+      return decorationTypesMap.get(snippetName)!;
+    }
+  }
+
+  return null;
 }
 
 export function deactivate() {}

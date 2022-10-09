@@ -1,5 +1,5 @@
 
-const colorNames = {
+export const colorNames = {
   black: 'black',
   red: 'red',
   green: 'green',
@@ -10,7 +10,7 @@ const colorNames = {
   white: 'white',
 } as const;
 
-type ColorName = keyof typeof colorNames;
+export type ColorName = keyof typeof colorNames;
 
 export const colorNameToForegroundColorCodeMap: Record<ColorName, string> = {
   [colorNames.black]: "\\\\x1b[30m",
@@ -46,6 +46,44 @@ export const colorNameToBackgroundColorCodeMap: Record<ColorName, string> = {
   [colorNames.cyan]: "\\\\x1b[46m",
   [colorNames.white]: "\\\\x1b[47m",
 };
+
+export const backgroundColorCodeToColorNameMap: Record<string, ColorName> = {
+  "\\\\x1b[40m": colorNames.black,
+  "\\\\x1b[41m": colorNames.red,
+  "\\\\x1b[42m": colorNames.green,
+  "\\\\x1b[43m": colorNames.yellow,
+  "\\\\x1b[44m": colorNames.blue,
+  "\\\\x1b[45m": colorNames.magenta,
+  "\\\\x1b[46m": colorNames.cyan,
+  "\\\\x1b[47m": colorNames.white,
+};
+
+export const backgroundColorCodes = Object.keys(backgroundColorCodeToColorNameMap);
+
+const codesToFbNameRegex = /(\\\\x1b\[\d\dm)(\\\\x1b\[\d\dm)/;
+export function mapColorCodesToForegroundBackgroundColorNames(colorCodes: string): [ColorName, ColorName]|null {
+  const match = codesToFbNameRegex.exec(colorCodes);
+  if(!match) return null;
+
+  const foregroundCode = match[1];
+  const backgroundCode = match[2];
+  const foregroundColorName = foregroundColorCodeToColorNameMap[foregroundCode];
+  const backgroundColorName = backgroundColorCodeToColorNameMap[backgroundCode];
+  if(!foregroundColorName || !backgroundColorName || foregroundColorName === backgroundColorName ) return null;
+
+  return [foregroundColorName, backgroundColorName];
+}
+
+export const foregroundBackgroundColorCodes = foregroundColorCodes.reduce(
+  (fbColorCodes, foregroundColorCode) => {
+    const foregroundColorName = foregroundColorCodeToColorNameMap[foregroundColorCode];
+    return [
+    ...fbColorCodes,
+    ...backgroundColorCodes.filter(
+      backgroundColorCode =>
+        backgroundColorCodeToColorNameMap[backgroundColorCode] !== foregroundColorName
+    ).map(backgroundColorCode => `${foregroundColorCode}${backgroundColorCode}`),
+  ]}, [] as string[]);
 
 export const resetCode = '\\\\x1b[0m';
 
