@@ -56,7 +56,17 @@
         "title": "Disable console-colored-logs highlights",
         "enablement": "true"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Console Colored Logs",
+      "properties": {
+        "console-colored-logs.showHighlights": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show highlights for the inserted color logs matching the used colors"
+        }
+      }
+    }
   },
   "repository": {
     "type": "git",

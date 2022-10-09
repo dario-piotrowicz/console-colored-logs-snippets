@@ -27,9 +27,9 @@ export function activate(context: vscode.ExtensionContext) {
   const decorationType = vscode.window.createTextEditorDecorationType(DEFAULT_STYLE);
 
   vscode.workspace.onDidChangeTextDocument(() => {
-	  if (!vscode.window.activeTextEditor?.document) {
-			return;
-	  }
+    const showHighlights = !!vscode.workspace.getConfiguration('console-colored-logs').get('showHighlights');
+
+    if (!showHighlights || !vscode.window.activeTextEditor?.document) return;
 
     const text = vscode.window.activeTextEditor.document.getText();
 
