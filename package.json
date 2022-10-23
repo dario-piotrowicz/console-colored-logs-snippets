@@ -27,22 +27,32 @@
       {
         "language": "javascript",
         "path": "./snippets/snippets.code-snippets",
-        "extensions": [".js", ".cjs", ".mjs"]
+        "extensions": [
+          ".js",
+          ".cjs",
+          ".mjs"
+        ]
       },
       {
         "language": "javascriptreact",
         "path": "./snippets/snippets.code-snippets",
-        "extensions": [".jsx"]
+        "extensions": [
+          ".jsx"
+        ]
       },
       {
         "language": "typescript",
         "path": "./snippets/snippets.code-snippets",
-        "extensions": [".ts"]
+        "extensions": [
+          ".ts"
+        ]
       },
       {
         "language": "typescriptreact",
         "path": "./snippets/snippets.code-snippets",
-        "extensions": [".tsx"]
+        "extensions": [
+          ".tsx"
+        ]
       }
     ],
     "commands": [
@@ -72,7 +82,10 @@
           "order": 1,
           "type": "string",
           "default": "content",
-          "enum": ["full", "content"],
+          "enum": [
+            "full",
+            "content"
+          ],
           "description": "Specifies to which range/area the highlight should be applied.",
           "enumDescriptions": [
             "To the whole console.log call",
@@ -93,11 +106,16 @@
     "generate-snippets": "ts-node generate-snippets-file.ts",
     "build": "npm run compile ; npm run generate-snippets",
     "package": "vsce package",
-    "publish": "vsce publish"
+    "publish": "vsce publish",
+    "test": "jest",
+    "test.watch": "jest --watch"
   },
   "devDependencies": {
-    "@types/vscode": "^1.72.0",
+    "@types/jest": "^29.2.0",
     "@types/node": "^18.7.23",
+    "@types/vscode": "^1.72.0",
+    "jest": "^29.2.1",
+    "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   }
