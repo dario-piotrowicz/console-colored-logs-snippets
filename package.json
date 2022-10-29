@@ -106,6 +106,7 @@
     "generate-snippets": "ts-node generate-snippets-file.ts",
     "build": "npm run compile ; npm run generate-snippets",
     "package": "vsce package",
+    "prepublish": "jest",
     "publish": "vsce publish",
     "test": "jest",
     "test.watch": "jest --watch"
