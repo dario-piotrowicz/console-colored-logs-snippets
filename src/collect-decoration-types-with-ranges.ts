@@ -36,17 +36,24 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
   return decorationTypesWithNumRanges;
 }
 
+const colorCodeRegex = new RegExp(
+  `(${[
+    ...foregroundBackgroundColorCodes,
+    ...foregroundColorCodes,
+    ...backgroundColorCodes,
+  ]
+    .map((code) => code.replace(/\[/g, "\\["))
+    .join("|")})`
+);
+const resetCodeRegex = new RegExp(
+  resetCode.replace("[", "\\[")
+);
 const consoleColoredLogRegex = new RegExp(
-  "console\\.log\\((\\s*`)" +
-    `(${[
-      ...foregroundBackgroundColorCodes,
-      ...foregroundColorCodes,
-      ...backgroundColorCodes,
-    ]
-      .map((code) => code.replace(/\[/g, "\\["))
-      .join("|")})` +
-    "([\\s\\S]*?)" +
-    `${resetCode.replace("[", "\\[")}\`\\s*\\);?`,
+  `console\\.log\\((\\s*\`)${
+    colorCodeRegex.source
+  }([\\s\\S]*?)${
+    resetCodeRegex.source
+  }\`\\s*\\);?`,
   "g"
 );
 
