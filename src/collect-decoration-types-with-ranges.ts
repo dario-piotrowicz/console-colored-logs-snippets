@@ -6,7 +6,11 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
   let match;
   const decorationTypesWithNumRanges = new Map<TextEditorDecorationType, ([number, number])[]>();
 
-  while (match = consoleColoredLogRegex.exec(text)) {
+  const textWithoutComments = text
+    .replace(/(\/\*([\s\S]*?)(\*\/|$))/g, convertStringToAsterisks)
+    .replace(/(\/\/.*)/g, convertStringToAsterisks);
+
+  while (match = consoleColoredLogRegex.exec(textWithoutComments)) {
     const wholeMatch = match[0];
     const spacingBeforeLogArgument = match[1];
     const colorCode = match[2];
@@ -47,3 +51,7 @@ const consoleColoredLogRegex = new RegExp(
     `${resetCode.replace("[", "\\[")}\`\\s*\\);?`,
   "g"
 );
+
+function convertStringToAsterisks(str: string): string {
+  return new Array(str.length).fill('*').join('');
+}

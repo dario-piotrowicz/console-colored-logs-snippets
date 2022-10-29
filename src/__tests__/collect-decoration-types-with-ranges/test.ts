@@ -50,6 +50,63 @@ describe('collectDecorationTypesWithNumRanges', () => {
       const expectedResult = new Map([]);
       expect(result).toEqual(expectedResult);
     });
+
+    it('should not match logs that are in a single line comment', () => {
+      const result = collectDecorationTypesWithNumRanges('// console.log(`\\x1b[41m test \\x1b[0m`);', 'full');
+      const expectedResult = new Map([]);
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should not match logs that are in a single line multiline comment', () => {
+      const result = collectDecorationTypesWithNumRanges('/* console.log(`\\x1b[41m test \\x1b[0m`); */', 'full');
+      const expectedResult = new Map([]);
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should not match logs that are in a multiline comment', () => {
+      const resultDecorationsMap = collectDecorationTypesWithNumRanges(`
+        console.log(\`\\x1b[46m cyan \\x1b[0m\`);
+
+        /*
+        console.log(\`\\x1b[41m red \\x1b[0m\`);
+
+        console.log(\`\\x1b[43m yellow \\x1b[0m\`);
+        */
+
+        console.log(\`\\x1b[45m magenta \\x1b[0m\`);
+      `, 'full');
+      const resultDecorations = [];
+      for(const decoration of resultDecorationsMap.keys()) {
+        resultDecorations.push(decoration);
+      }
+      expect(resultDecorations).toEqual([
+        getDecorationType('\\x1b[46m'),
+        getDecorationType('\\x1b[45m')
+      ]);
+    });
+
+    it('should not match logs that are in a non properly closed multiline comment', () => {
+      // Note: in js/ts file if you start adding a /* vscode highlights all the
+      //       rest of the file as a multiline comment until you add the closing */
+      //       so we need to do the same for consistency sake
+      const resultDecorationsMap = collectDecorationTypesWithNumRanges(`
+        console.log(\`\\x1b[46m cyan \\x1b[0m\`);
+
+        /*
+        console.log(\`\\x1b[41m red \\x1b[0m\`);
+
+        console.log(\`\\x1b[43m yellow \\x1b[0m\`);
+
+        console.log(\`\\x1b[45m magenta \\x1b[0m\`);
+      `, 'full');
+      const resultDecorations = [];
+      for(const decoration of resultDecorationsMap.keys()) {
+        resultDecorations.push(decoration);
+      }
+      expect(resultDecorations).toEqual([
+        getDecorationType('\\x1b[46m'),
+      ]);
+    });
   });
 
   describe('in multiline scenarios', () => {
@@ -112,8 +169,6 @@ describe('collectDecorationTypesWithNumRanges', () => {
   });
 
   describe("when there are multiple logs to highlight", () => {
-
-
     it('should match all the logs in a single line', () => {
       const resultDecorationsMap = collectDecorationTypesWithNumRanges(
         'console.log(`\\x1b[31m red \\x1b[0m`), console.log(`\\x1b[32m green \\x1b[0m`), console.log(`\\x1b[34m blue \\x1b[0m`);',
@@ -124,9 +179,9 @@ describe('collectDecorationTypesWithNumRanges', () => {
         resultDecorations.push(decoration);
       }
       expect(resultDecorations).toEqual([
-        getDecorationType('\\x1b[31m')!,
-        getDecorationType('\\x1b[32m')!,
-        getDecorationType('\\x1b[34m')!
+        getDecorationType('\\x1b[31m'),
+        getDecorationType('\\x1b[32m'),
+        getDecorationType('\\x1b[34m')
       ]);
     });
 
@@ -146,9 +201,9 @@ describe('collectDecorationTypesWithNumRanges', () => {
         resultDecorations.push(decoration);
       }
       expect(resultDecorations).toEqual([
-        getDecorationType('\\x1b[42m')!,
-        getDecorationType('\\x1b[36m\\x1b[43m')!,
-        getDecorationType('\\x1b[41m')!
+        getDecorationType('\\x1b[42m'),
+        getDecorationType('\\x1b[36m\\x1b[43m'),
+        getDecorationType('\\x1b[41m')
       ]);
     });
   });
