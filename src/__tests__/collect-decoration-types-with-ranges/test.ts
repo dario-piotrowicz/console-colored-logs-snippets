@@ -36,6 +36,25 @@ describe('collectDecorationTypesWithNumRanges', () => {
       expect(result).toEqual(expectedResult);
     });
 
+    it('should full match a log with extra spacing/newlines before and after the log argument', () => {
+      // Note: we want this behavior because autoformatters can often move the log argument
+      //       on a new line and indent it, so we want the matching to handle such changes
+      const result = collectDecorationTypesWithNumRanges(`
+        console.log(
+          \`\\x1b[44m this is a test \\x1b[0m\`
+        );`, 'full');
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [getDecorationType('\\x1b[44m')!, [[
+          `
+        `.length,
+        `
+        console.log(
+          \`\\x1b[44m this is a test \\x1b[0m\`
+        );`.length]]]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
     it('should not match logs not following the snippets format', () => {
       const result = collectDecorationTypesWithNumRanges([
         'console.log(``);',

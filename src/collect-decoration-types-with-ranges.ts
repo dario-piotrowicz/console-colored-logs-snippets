@@ -25,14 +25,15 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
 }
 
 const consoleColoredLogRegex = new RegExp(
-  'console\\.log\\(\`'+
-  `(${[
+  "console\\.log\\(\\s*`" +
+    `(${[
       ...foregroundBackgroundColorCodes,
       ...foregroundColorCodes,
       ...backgroundColorCodes,
-    ].map(code => code.replace(/\[/g, '\\[')).join('|')
-    })` +
-    '([\\s\\S]*?)' +
-    `${resetCode.replace('[', '\\[')}\`\\);?`,
-  'g'
+    ]
+      .map((code) => code.replace(/\[/g, "\\["))
+      .join("|")})` +
+    "([\\s\\S]*?)" +
+    `${resetCode.replace("[", "\\[")}\`\\s*\\);?`,
+  "g"
 );
