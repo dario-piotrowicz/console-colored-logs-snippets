@@ -110,4 +110,46 @@ describe('collectDecorationTypesWithNumRanges', () => {
       expect(result).toEqual(expectedResult);
     });
   });
+
+  describe("when there are multiple logs to highlight", () => {
+
+
+    it('should match all the logs in a single line', () => {
+      const resultDecorationsMap = collectDecorationTypesWithNumRanges(
+        'console.log(`\\x1b[31m red \\x1b[0m`), console.log(`\\x1b[32m green \\x1b[0m`), console.log(`\\x1b[34m blue \\x1b[0m`);',
+        'content',
+      );
+      const resultDecorations = [];
+      for(const decoration of resultDecorationsMap.keys()) {
+        resultDecorations.push(decoration);
+      }
+      expect(resultDecorations).toEqual([
+        getDecorationType('\\x1b[31m')!,
+        getDecorationType('\\x1b[32m')!,
+        getDecorationType('\\x1b[34m')!
+      ]);
+    });
+
+    it('should match all the logs in a multiline file', () => {
+      const resultDecorationsMap = collectDecorationTypesWithNumRanges(`
+      console.log(\`\\x1b[42m dffgdsg \\x1b[0m\`);
+
+      console.log(
+        \`\\x1b[36m\\x1b[43m $JSON({}) \\x1b[0m\`
+      );
+
+      console.log(\`\\x1b[41m this is a test \\x1b[0m\`);
+
+      `, 'full');
+      const resultDecorations = [];
+      for(const decoration of resultDecorationsMap.keys()) {
+        resultDecorations.push(decoration);
+      }
+      expect(resultDecorations).toEqual([
+        getDecorationType('\\x1b[42m')!,
+        getDecorationType('\\x1b[36m\\x1b[43m')!,
+        getDecorationType('\\x1b[41m')!
+      ]);
+    });
+  });
 });
