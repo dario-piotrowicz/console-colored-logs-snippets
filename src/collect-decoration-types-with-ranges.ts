@@ -7,7 +7,10 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
   const decorationTypesWithNumRanges = new Map<TextEditorDecorationType, ([number, number])[]>();
 
   while (match = consoleColoredLogRegex.exec(text)) {
-    const colorCode = match[1];
+    const wholeMatch = match[0];
+    const spacingBeforeLogArgument = match[1];
+    const colorCode = match[2];
+    const contentOfLog = match[3];
 
     const decorationType = getDecorationType(colorCode);
     if (decorationType) {
@@ -15,8 +18,15 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
         decorationTypesWithNumRanges.set(decorationType, []);
       }
 
-      const startIdx = match.index + (highlightsRange === 'full' ? 0 : "console.log(`".length + match[1].length);
-      const endIdx = startIdx + match[highlightsRange === 'full' ? 0 : 2].length;
+      const startIdx = match.index + (
+        highlightsRange === 'full'
+        ? 0
+        : `console.log(${spacingBeforeLogArgument}${colorCode}`.length);
+      const endIdx = startIdx + (
+        highlightsRange === 'full'
+        ? wholeMatch
+        : contentOfLog
+      ).length;
 
       decorationTypesWithNumRanges.get(decorationType)!.push([startIdx, endIdx]);
     }
@@ -25,7 +35,7 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
 }
 
 const consoleColoredLogRegex = new RegExp(
-  "console\\.log\\(\\s*`" +
+  "console\\.log\\((\\s*`)" +
     `(${[
       ...foregroundBackgroundColorCodes,
       ...foregroundColorCodes,
