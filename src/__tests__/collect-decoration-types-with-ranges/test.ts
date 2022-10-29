@@ -17,7 +17,26 @@ describe('collectDecorationTypesWithNumRanges', () => {
       expect(result).toEqual(expectedResult);
     });
 
-    it.only('should not match logs not following the snippets format', () => {
+    it('should match a log spanning over multiple lines', () => {
+      const result = collectDecorationTypesWithNumRanges(`
+        console.log(\`\\x1b[44m
+          this test spans
+          across multiple lines
+        \\x1b[0m\`);`, 'full');
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [getDecorationType('\\x1b[44m')!, [[
+          `
+        `.length,
+        `
+        console.log(\`\\x1b[44m
+          this test spans
+          across multiple lines
+        \\x1b[0m\`);`.length]]]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should not match logs not following the snippets format', () => {
       const result = collectDecorationTypesWithNumRanges([
         'console.log(``);',
         'console.log(`this is a test`);',
