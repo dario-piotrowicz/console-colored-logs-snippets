@@ -33,6 +33,6 @@ const consoleColoredLogRegex = new RegExp(
     ].map(code => code.replace(/\[/g, '\\[')).join('|')
     })` +
     '([\\s\\S]*?)' +
-    `${resetCode.replace('[', '\\[')}\`\\);`,
+    `${resetCode.replace('[', '\\[')}\`\\);?`,
   'g'
 );

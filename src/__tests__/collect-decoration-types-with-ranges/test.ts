@@ -9,6 +9,14 @@ describe('collectDecorationTypesWithNumRanges', () => {
         expect(collectDecorationTypesWithNumRanges('', 'full')).toEqual(new Map());
     });
 
+    it('should match a log not ending with a semicolon', () => {
+      const result = collectDecorationTypesWithNumRanges('console.log(`\\x1b[41m test \\x1b[0m`)', 'full');
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [getDecorationType('\\x1b[41m')!, [[0, 'console.log(`\\x1b[41m test \\x1b[0m`)'.length]]]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
     it('should full match a full string', () => {
       const result = collectDecorationTypesWithNumRanges('console.log(`\\x1b[31m test \\x1b[0m`);', 'full');
       const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
