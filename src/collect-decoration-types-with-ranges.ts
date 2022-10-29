@@ -6,9 +6,7 @@ export function collectDecorationTypesWithNumRanges(text: string, highlightsRang
   let match;
   const decorationTypesWithNumRanges = new Map<TextEditorDecorationType, ([number, number])[]>();
 
-  const textWithoutComments = text
-    .replace(/(\/\*([\s\S]*?)(\*\/|$))/g, convertStringToAsterisks)
-    .replace(/(\/\/.*)/g, convertStringToAsterisks);
+  const textWithoutComments = text.replace(jsCommentsRegex, convertStringToAsterisks);
 
   while (match = consoleColoredLogRegex.exec(textWithoutComments)) {
     const wholeMatch = match[0];
@@ -51,6 +49,10 @@ const consoleColoredLogRegex = new RegExp(
     `${resetCode.replace("[", "\\[")}\`\\s*\\);?`,
   "g"
 );
+
+const jsMultilineCommentRegex = /(\/\*([\s\S]*?)(\*\/|$))/;
+const jsSingleLineCommentRegex = /(\/\/.*)/;
+const jsCommentsRegex = new RegExp(`${jsMultilineCommentRegex.source}|${jsSingleLineCommentRegex.source}`, 'g');
 
 function convertStringToAsterisks(str: string): string {
   return new Array(str.length).fill('*').join('');
