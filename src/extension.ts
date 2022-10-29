@@ -18,6 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
     updateActiveTextEditorHighlights();
 	}));
 
+  vscode.window.onDidChangeActiveTextEditor(updateActiveTextEditorHighlights);
   vscode.workspace.onDidChangeTextDocument(updateActiveTextEditorHighlights);
 }
 
