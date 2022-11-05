@@ -207,4 +207,55 @@ describe('collectDecorationTypesWithNumRanges', () => {
       ]);
     });
   });
+
+  describe('when logs have extra arguments', () => {
+    it('should content match a log with one extra argument', () => {
+      const result = collectDecorationTypesWithNumRanges('console.log(`\\x1b[41m test \\x1b[0m`, { obj });', 'content');
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [ getDecorationType('\\x1b[41m')!,
+          [['console.log(`\\x1b[41m'.length, 'console.log(`\\x1b[41m test '.length]]
+        ]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should full match a log with one extra argument', () => {
+      const result = collectDecorationTypesWithNumRanges('console.log(`\\x1b[41m test \\x1b[0m`, { obj });', 'full');
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [ getDecorationType('\\x1b[41m')!,
+          [[0, 'console.log(`\\x1b[41m test \\x1b[0m`, { obj });'.length]]
+        ]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should match a log with more than one extra argument (slipt over multiple lines)', () => {
+      const input =
+        `console.log(
+          \`\\x1b[41m test \\x1b[0m\`,
+          { obj },
+          "this is a test",
+        );`;
+      const result = collectDecorationTypesWithNumRanges(input, 'full');
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [ getDecorationType('\\x1b[41m')!,
+          [[0, input.length]]
+        ]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should match a log with a function call as an extra argument', () => {
+      const result = collectDecorationTypesWithNumRanges(
+        'console.log(`\\x1b[42m test with fn call \\x1b[0m`, testFn(`inside console.log`));', 'content'
+      );
+      const expectedResult = new Map<vscode.TextEditorDecorationType, ([number, number])[]>([
+        [ getDecorationType('\\x1b[42m')!,
+          [['console.log(`\\x1b[42m'.length, 'console.log(`\\x1b[42m test with fn call '.length]]
+        ]
+      ]);
+      expect(result).toEqual(expectedResult);
+    });
+
+  });
 });

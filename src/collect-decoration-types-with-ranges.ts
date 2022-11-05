@@ -53,7 +53,7 @@ const consoleColoredLogRegex = new RegExp(
     colorCodeRegex.source
   }([\\s\\S]*?)${
     resetCodeRegex.source
-  }\`\\s*\\);?`,
+  }\`(,[\\s\\S]*?)?\\s*\\);?`,
   "g"
 );
 
