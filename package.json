@@ -65,6 +65,10 @@
         "command": "console-colored-logs.disableHighlights",
         "title": "Disable console-colored-logs highlights",
         "enablement": "config.console-colored-logs.highlights.enabled"
+      },
+      {
+        "command": "console-colored-logs.listConsoleColoredLogs",
+        "title": "List all the console-colored-logs"
       }
     ],
     "configuration": {

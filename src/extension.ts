@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { clearDecorations } from './clear-decorations';
+import { listAllConsoleColoredLogs } from './list-all-console-colored-logs';
 import { updateActiveTextEditorHighlights } from './update-active-text-editor-highlights';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -17,6 +18,18 @@ export function activate(context: vscode.ExtensionContext) {
     clearDecorations();
     updateActiveTextEditorHighlights();
   }));
+
+  context.subscriptions.push(vscode.commands.registerCommand('console-colored-logs.listConsoleColoredLogs', function () {
+    vscode.window.withProgress(
+      {
+        location: vscode.ProgressLocation.Window,
+        cancellable: false,
+        title: 'Looking for console colored logs'
+      },
+      listAllConsoleColoredLogs,
+    );
+}));
+
 
   vscode.window.onDidChangeActiveTextEditor(updateActiveTextEditorHighlights);
   vscode.workspace.onDidChangeTextDocument(updateActiveTextEditorHighlights);
