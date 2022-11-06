@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.18
+Added command to list all the console-colored-logs present in the workspace (WIP)
+
 ## 0.0.15
 Improved Experimental highlights (WIP, almost done, off by default)
 

@@ -34,6 +34,14 @@ Additionally the extension also provides a highlighting feature which applies th
 
 To enable the highlights simply go to the extensions options and enable it from there.
 
+## Listing all console logs
+
+> Experimental
+
+Additionally the extension also provides a command to list all the console colored logs present in the current workspace, to run the command just access the [command palette](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) and run the `List all the console-colored-logs` command.
+
+All the logs will be listed in a new "console colored logs listing" output channel.
+
 ## Extra Notes
 
 - This set of snippets was created to provide a very minimal quick and dirty way to add colors to nodejs' `console.log` calls since for them you need to remember the color codes (as they don't accept css stylings as the browser's calls do). Anyways browsers also accept the color codes so the snippets can also be used in standard browser js as well.
