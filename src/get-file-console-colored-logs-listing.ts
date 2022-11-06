@@ -20,7 +20,7 @@ export async function getFileConsoleColoredLogsListing(
       const line = positionStart.line;
       const textLine = file.lineAt(line);
       const lineNumber = line + 1;
-      const columnNumber = textLine.text.indexOf(cclText) + 1;
+      const columnNumber = textLine.text.indexOf('console.log(`') + 1;
       listings.push(
         `${fileUri}:${lineNumber}:${columnNumber}\n` +
         `    ${cclText}\n`

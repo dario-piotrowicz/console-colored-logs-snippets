@@ -23,6 +23,26 @@ describe('getFileConsoleColoredLogsListing', () => {
         '    console.log(`\\x1b[34m\x1b[43m ${i} \\x1b[0m`);\n'
       ]);
     });
+
+    it('should display a multiline listing', async () => {
+      const listings = await getListings(
+        'for(let i = 0; i < 10; i++){\n' +
+        '   if(array[i]){\n'+
+        '      console.log(`\\x1b[34m\\x1b[43m\n' +
+        '         - ${i}\n' +
+        '         - value = ${array[i]}\n' +
+        '      \\x1b[0m`);\n' +
+        '   }\n'+
+        '}',
+      );
+      expect(listings).toEqual([
+        "mockFile:3:7\n" +
+        '    console.log(`\\x1b[34m\\x1b[43m\n' +
+        '         - ${i}\n' +
+        '         - value = ${array[i]}\n' +
+        '      \\x1b[0m`);\n'
+      ]);
+    });
 });
 
 function getListings(fileContent: string) {
