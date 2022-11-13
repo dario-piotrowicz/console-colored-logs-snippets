@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { collectDecorationTypesWithNumRanges } from './collect-decoration-types-with-ranges';
+import { collectCclCommandsWithDetails } from './collect-ccl-commands-with-details';
 
 export async function getFileConsoleColoredLogsListing(
   fileUri: vscode.Uri,
@@ -8,21 +8,18 @@ export async function getFileConsoleColoredLogsListing(
   const listings: string[] = [];
   const file = await vscode.workspace.openTextDocument(fileUri);
   const text = file.getText();
-  // Todo: I'm using collectDecorationTypesWithNumRanges and ignoring the decorations
-  //       a more proper function should be created for this instead
-  const decorationTypesWithNumRanges = collectDecorationTypesWithNumRanges(text, 'full');
-  for (const [, decorationTypeNumRanges] of decorationTypesWithNumRanges) {
-    for (const range of decorationTypeNumRanges) {
-      const positionStart = file.positionAt(range[0]);
-      const cclText = getFileRangeTextFunction(file, range);
-      const line = positionStart.line;
-      const lineNumber = line + 1;
-      const columnNumber = positionStart.character + 1;
-      listings.push(
-        `${fileUri}:${lineNumber}:${columnNumber}\n` +
-        `    ${cclText}\n`
-      );
-    }
+  const cclCommandsWithDetails = collectCclCommandsWithDetails(text);
+  for (const cclCommandWithDetails of cclCommandsWithDetails) {
+    const range = cclCommandWithDetails.full.numRange;
+    const positionStart = file.positionAt(range[0]);
+    const cclText = getFileRangeTextFunction(file, range);
+    const line = positionStart.line;
+    const lineNumber = line + 1;
+    const columnNumber = positionStart.character + 1;
+    listings.push(
+      `${fileUri}:${lineNumber}:${columnNumber}\n` +
+      `    ${cclText}\n`
+    );
   }
   return listings;
 }
