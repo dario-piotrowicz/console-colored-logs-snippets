@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.21
+Added JSON.stringify snippets
+
 ## 0.0.18
 Added command to list all the console-colored-logs present in the workspace (WIP)
 

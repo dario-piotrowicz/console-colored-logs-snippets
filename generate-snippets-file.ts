@@ -35,6 +35,12 @@ for ( const [color, code] of Object.entries(colorNameToForegroundColorCodeMap) )
     `console.log(\`${code} $1 ${resetCode}\`);`,
     `console.log with its text colored in ${color}`
   );
+  printSnippet(
+    `console.log with ${color} text + JSON stringify`,
+    `${color}-j`,
+    `console.log(\`${code} \${JSON.stringify($1)} ${resetCode}\`);`,
+    `console.log with its text colored in ${color} (+ JSON stringify)`
+  );
 }
 
 for ( const [color, code] of Object.entries(colorNameToBackgroundColorCodeMap) ) {
@@ -43,6 +49,12 @@ for ( const [color, code] of Object.entries(colorNameToBackgroundColorCodeMap) )
     `bg-${color}`,
     `console.log(\`${code} $1 ${resetCode}\`);`,
     `console.log with a ${color} background`
+  );
+  printSnippet(
+    `console.log with a ${color} background + JSON stringify`,
+    `bg-${color}-j`,
+    `console.log(\`${code} \${JSON.stringify($1)} ${resetCode}\`);`,
+    `console.log with a ${color} background (+ JSON stringify)`
   );
 }
 
@@ -54,6 +66,12 @@ for ( const [foregroundColor, foregroundCode] of Object.entries(colorNameToForeg
         `${foregroundColor}-bg-${backgroundColor}`,
         `console.log(\`${foregroundCode}${backgroundCode} $1 ${resetCode}\`);`,
         `console.log with ${foregroundColor} text and a ${backgroundColor} background`
+      );
+      printSnippet(
+        `console.log with ${foregroundColor} text and a ${backgroundColor} background + JSON stringify`,
+        `${foregroundColor}-bg-${backgroundColor}-j`,
+        `console.log(\`${foregroundCode}${backgroundCode} \${JSON.stringify($1)} ${resetCode}\`);`,
+        `console.log with ${foregroundColor} text and a ${backgroundColor} background (+ JSON stringify)`
       );
     }
   }

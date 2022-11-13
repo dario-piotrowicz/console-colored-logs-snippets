@@ -9,6 +9,15 @@
     "description": "console.log with its text colored in black"
   },
 
+  "console.log with black text + JSON stringify": {
+    "prefix": "ccl-black-j",
+    "body": [
+      "console.log(`\\x1b[30m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in black (+ JSON stringify)"
+  },
+
   "console.log with red text": {
     "prefix": "ccl-red",
     "body": [
@@ -16,6 +25,15 @@
       "$2"
     ],
     "description": "console.log with its text colored in red"
+  },
+
+  "console.log with red text + JSON stringify": {
+    "prefix": "ccl-red-j",
+    "body": [
+      "console.log(`\\x1b[31m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in red (+ JSON stringify)"
   },
 
   "console.log with green text": {
@@ -27,6 +45,15 @@
     "description": "console.log with its text colored in green"
   },
 
+  "console.log with green text + JSON stringify": {
+    "prefix": "ccl-green-j",
+    "body": [
+      "console.log(`\\x1b[32m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in green (+ JSON stringify)"
+  },
+
   "console.log with yellow text": {
     "prefix": "ccl-yellow",
     "body": [
@@ -34,6 +61,15 @@
       "$2"
     ],
     "description": "console.log with its text colored in yellow"
+  },
+
+  "console.log with yellow text + JSON stringify": {
+    "prefix": "ccl-yellow-j",
+    "body": [
+      "console.log(`\\x1b[33m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in yellow (+ JSON stringify)"
   },
 
   "console.log with blue text": {
@@ -45,6 +81,15 @@
     "description": "console.log with its text colored in blue"
   },
 
+  "console.log with blue text + JSON stringify": {
+    "prefix": "ccl-blue-j",
+    "body": [
+      "console.log(`\\x1b[34m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in blue (+ JSON stringify)"
+  },
+
   "console.log with magenta text": {
     "prefix": "ccl-magenta",
     "body": [
@@ -52,6 +97,15 @@
       "$2"
     ],
     "description": "console.log with its text colored in magenta"
+  },
+
+  "console.log with magenta text + JSON stringify": {
+    "prefix": "ccl-magenta-j",
+    "body": [
+      "console.log(`\\x1b[35m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in magenta (+ JSON stringify)"
   },
 
   "console.log with cyan text": {
@@ -63,6 +117,15 @@
     "description": "console.log with its text colored in cyan"
   },
 
+  "console.log with cyan text + JSON stringify": {
+    "prefix": "ccl-cyan-j",
+    "body": [
+      "console.log(`\\x1b[36m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in cyan (+ JSON stringify)"
+  },
+
   "console.log with white text": {
     "prefix": "ccl-white",
     "body": [
@@ -70,6 +133,15 @@
       "$2"
     ],
     "description": "console.log with its text colored in white"
+  },
+
+  "console.log with white text + JSON stringify": {
+    "prefix": "ccl-white-j",
+    "body": [
+      "console.log(`\\x1b[37m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with its text colored in white (+ JSON stringify)"
   },
 
   "console.log with a black background": {
@@ -81,6 +153,15 @@
     "description": "console.log with a black background"
   },
 
+  "console.log with a black background + JSON stringify": {
+    "prefix": "ccl-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a black background (+ JSON stringify)"
+  },
+
   "console.log with a red background": {
     "prefix": "ccl-bg-red",
     "body": [
@@ -88,6 +169,15 @@
       "$2"
     ],
     "description": "console.log with a red background"
+  },
+
+  "console.log with a red background + JSON stringify": {
+    "prefix": "ccl-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a red background (+ JSON stringify)"
   },
 
   "console.log with a green background": {
@@ -99,6 +189,15 @@
     "description": "console.log with a green background"
   },
 
+  "console.log with a green background + JSON stringify": {
+    "prefix": "ccl-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a green background (+ JSON stringify)"
+  },
+
   "console.log with a yellow background": {
     "prefix": "ccl-bg-yellow",
     "body": [
@@ -106,6 +205,15 @@
       "$2"
     ],
     "description": "console.log with a yellow background"
+  },
+
+  "console.log with a yellow background + JSON stringify": {
+    "prefix": "ccl-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a yellow background (+ JSON stringify)"
   },
 
   "console.log with a blue background": {
@@ -117,6 +225,15 @@
     "description": "console.log with a blue background"
   },
 
+  "console.log with a blue background + JSON stringify": {
+    "prefix": "ccl-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a blue background (+ JSON stringify)"
+  },
+
   "console.log with a magenta background": {
     "prefix": "ccl-bg-magenta",
     "body": [
@@ -124,6 +241,15 @@
       "$2"
     ],
     "description": "console.log with a magenta background"
+  },
+
+  "console.log with a magenta background + JSON stringify": {
+    "prefix": "ccl-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a magenta background (+ JSON stringify)"
   },
 
   "console.log with a cyan background": {
@@ -135,6 +261,15 @@
     "description": "console.log with a cyan background"
   },
 
+  "console.log with a cyan background + JSON stringify": {
+    "prefix": "ccl-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a cyan background (+ JSON stringify)"
+  },
+
   "console.log with a white background": {
     "prefix": "ccl-bg-white",
     "body": [
@@ -142,6 +277,15 @@
       "$2"
     ],
     "description": "console.log with a white background"
+  },
+
+  "console.log with a white background + JSON stringify": {
+    "prefix": "ccl-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with a white background (+ JSON stringify)"
   },
 
   "console.log with black text and a red background": {
@@ -153,6 +297,15 @@
     "description": "console.log with black text and a red background"
   },
 
+  "console.log with black text and a red background + JSON stringify": {
+    "prefix": "ccl-black-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a red background (+ JSON stringify)"
+  },
+
   "console.log with black text and a green background": {
     "prefix": "ccl-black-bg-green",
     "body": [
@@ -160,6 +313,15 @@
       "$2"
     ],
     "description": "console.log with black text and a green background"
+  },
+
+  "console.log with black text and a green background + JSON stringify": {
+    "prefix": "ccl-black-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a green background (+ JSON stringify)"
   },
 
   "console.log with black text and a yellow background": {
@@ -171,6 +333,15 @@
     "description": "console.log with black text and a yellow background"
   },
 
+  "console.log with black text and a yellow background + JSON stringify": {
+    "prefix": "ccl-black-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a yellow background (+ JSON stringify)"
+  },
+
   "console.log with black text and a blue background": {
     "prefix": "ccl-black-bg-blue",
     "body": [
@@ -178,6 +349,15 @@
       "$2"
     ],
     "description": "console.log with black text and a blue background"
+  },
+
+  "console.log with black text and a blue background + JSON stringify": {
+    "prefix": "ccl-black-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a blue background (+ JSON stringify)"
   },
 
   "console.log with black text and a magenta background": {
@@ -189,6 +369,15 @@
     "description": "console.log with black text and a magenta background"
   },
 
+  "console.log with black text and a magenta background + JSON stringify": {
+    "prefix": "ccl-black-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a magenta background (+ JSON stringify)"
+  },
+
   "console.log with black text and a cyan background": {
     "prefix": "ccl-black-bg-cyan",
     "body": [
@@ -196,6 +385,15 @@
       "$2"
     ],
     "description": "console.log with black text and a cyan background"
+  },
+
+  "console.log with black text and a cyan background + JSON stringify": {
+    "prefix": "ccl-black-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a cyan background (+ JSON stringify)"
   },
 
   "console.log with black text and a white background": {
@@ -207,6 +405,15 @@
     "description": "console.log with black text and a white background"
   },
 
+  "console.log with black text and a white background + JSON stringify": {
+    "prefix": "ccl-black-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[30m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with black text and a white background (+ JSON stringify)"
+  },
+
   "console.log with red text and a black background": {
     "prefix": "ccl-red-bg-black",
     "body": [
@@ -214,6 +421,15 @@
       "$2"
     ],
     "description": "console.log with red text and a black background"
+  },
+
+  "console.log with red text and a black background + JSON stringify": {
+    "prefix": "ccl-red-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a black background (+ JSON stringify)"
   },
 
   "console.log with red text and a green background": {
@@ -225,6 +441,15 @@
     "description": "console.log with red text and a green background"
   },
 
+  "console.log with red text and a green background + JSON stringify": {
+    "prefix": "ccl-red-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a green background (+ JSON stringify)"
+  },
+
   "console.log with red text and a yellow background": {
     "prefix": "ccl-red-bg-yellow",
     "body": [
@@ -232,6 +457,15 @@
       "$2"
     ],
     "description": "console.log with red text and a yellow background"
+  },
+
+  "console.log with red text and a yellow background + JSON stringify": {
+    "prefix": "ccl-red-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a yellow background (+ JSON stringify)"
   },
 
   "console.log with red text and a blue background": {
@@ -243,6 +477,15 @@
     "description": "console.log with red text and a blue background"
   },
 
+  "console.log with red text and a blue background + JSON stringify": {
+    "prefix": "ccl-red-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a blue background (+ JSON stringify)"
+  },
+
   "console.log with red text and a magenta background": {
     "prefix": "ccl-red-bg-magenta",
     "body": [
@@ -250,6 +493,15 @@
       "$2"
     ],
     "description": "console.log with red text and a magenta background"
+  },
+
+  "console.log with red text and a magenta background + JSON stringify": {
+    "prefix": "ccl-red-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a magenta background (+ JSON stringify)"
   },
 
   "console.log with red text and a cyan background": {
@@ -261,6 +513,15 @@
     "description": "console.log with red text and a cyan background"
   },
 
+  "console.log with red text and a cyan background + JSON stringify": {
+    "prefix": "ccl-red-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a cyan background (+ JSON stringify)"
+  },
+
   "console.log with red text and a white background": {
     "prefix": "ccl-red-bg-white",
     "body": [
@@ -268,6 +529,15 @@
       "$2"
     ],
     "description": "console.log with red text and a white background"
+  },
+
+  "console.log with red text and a white background + JSON stringify": {
+    "prefix": "ccl-red-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[31m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with red text and a white background (+ JSON stringify)"
   },
 
   "console.log with green text and a black background": {
@@ -279,6 +549,15 @@
     "description": "console.log with green text and a black background"
   },
 
+  "console.log with green text and a black background + JSON stringify": {
+    "prefix": "ccl-green-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a black background (+ JSON stringify)"
+  },
+
   "console.log with green text and a red background": {
     "prefix": "ccl-green-bg-red",
     "body": [
@@ -286,6 +565,15 @@
       "$2"
     ],
     "description": "console.log with green text and a red background"
+  },
+
+  "console.log with green text and a red background + JSON stringify": {
+    "prefix": "ccl-green-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a red background (+ JSON stringify)"
   },
 
   "console.log with green text and a yellow background": {
@@ -297,6 +585,15 @@
     "description": "console.log with green text and a yellow background"
   },
 
+  "console.log with green text and a yellow background + JSON stringify": {
+    "prefix": "ccl-green-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a yellow background (+ JSON stringify)"
+  },
+
   "console.log with green text and a blue background": {
     "prefix": "ccl-green-bg-blue",
     "body": [
@@ -304,6 +601,15 @@
       "$2"
     ],
     "description": "console.log with green text and a blue background"
+  },
+
+  "console.log with green text and a blue background + JSON stringify": {
+    "prefix": "ccl-green-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a blue background (+ JSON stringify)"
   },
 
   "console.log with green text and a magenta background": {
@@ -315,6 +621,15 @@
     "description": "console.log with green text and a magenta background"
   },
 
+  "console.log with green text and a magenta background + JSON stringify": {
+    "prefix": "ccl-green-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a magenta background (+ JSON stringify)"
+  },
+
   "console.log with green text and a cyan background": {
     "prefix": "ccl-green-bg-cyan",
     "body": [
@@ -322,6 +637,15 @@
       "$2"
     ],
     "description": "console.log with green text and a cyan background"
+  },
+
+  "console.log with green text and a cyan background + JSON stringify": {
+    "prefix": "ccl-green-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a cyan background (+ JSON stringify)"
   },
 
   "console.log with green text and a white background": {
@@ -333,6 +657,15 @@
     "description": "console.log with green text and a white background"
   },
 
+  "console.log with green text and a white background + JSON stringify": {
+    "prefix": "ccl-green-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[32m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with green text and a white background (+ JSON stringify)"
+  },
+
   "console.log with yellow text and a black background": {
     "prefix": "ccl-yellow-bg-black",
     "body": [
@@ -340,6 +673,15 @@
       "$2"
     ],
     "description": "console.log with yellow text and a black background"
+  },
+
+  "console.log with yellow text and a black background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a black background (+ JSON stringify)"
   },
 
   "console.log with yellow text and a red background": {
@@ -351,6 +693,15 @@
     "description": "console.log with yellow text and a red background"
   },
 
+  "console.log with yellow text and a red background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a red background (+ JSON stringify)"
+  },
+
   "console.log with yellow text and a green background": {
     "prefix": "ccl-yellow-bg-green",
     "body": [
@@ -358,6 +709,15 @@
       "$2"
     ],
     "description": "console.log with yellow text and a green background"
+  },
+
+  "console.log with yellow text and a green background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a green background (+ JSON stringify)"
   },
 
   "console.log with yellow text and a blue background": {
@@ -369,6 +729,15 @@
     "description": "console.log with yellow text and a blue background"
   },
 
+  "console.log with yellow text and a blue background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a blue background (+ JSON stringify)"
+  },
+
   "console.log with yellow text and a magenta background": {
     "prefix": "ccl-yellow-bg-magenta",
     "body": [
@@ -376,6 +745,15 @@
       "$2"
     ],
     "description": "console.log with yellow text and a magenta background"
+  },
+
+  "console.log with yellow text and a magenta background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a magenta background (+ JSON stringify)"
   },
 
   "console.log with yellow text and a cyan background": {
@@ -387,6 +765,15 @@
     "description": "console.log with yellow text and a cyan background"
   },
 
+  "console.log with yellow text and a cyan background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a cyan background (+ JSON stringify)"
+  },
+
   "console.log with yellow text and a white background": {
     "prefix": "ccl-yellow-bg-white",
     "body": [
@@ -394,6 +781,15 @@
       "$2"
     ],
     "description": "console.log with yellow text and a white background"
+  },
+
+  "console.log with yellow text and a white background + JSON stringify": {
+    "prefix": "ccl-yellow-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[33m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with yellow text and a white background (+ JSON stringify)"
   },
 
   "console.log with blue text and a black background": {
@@ -405,6 +801,15 @@
     "description": "console.log with blue text and a black background"
   },
 
+  "console.log with blue text and a black background + JSON stringify": {
+    "prefix": "ccl-blue-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a black background (+ JSON stringify)"
+  },
+
   "console.log with blue text and a red background": {
     "prefix": "ccl-blue-bg-red",
     "body": [
@@ -412,6 +817,15 @@
       "$2"
     ],
     "description": "console.log with blue text and a red background"
+  },
+
+  "console.log with blue text and a red background + JSON stringify": {
+    "prefix": "ccl-blue-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a red background (+ JSON stringify)"
   },
 
   "console.log with blue text and a green background": {
@@ -423,6 +837,15 @@
     "description": "console.log with blue text and a green background"
   },
 
+  "console.log with blue text and a green background + JSON stringify": {
+    "prefix": "ccl-blue-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a green background (+ JSON stringify)"
+  },
+
   "console.log with blue text and a yellow background": {
     "prefix": "ccl-blue-bg-yellow",
     "body": [
@@ -430,6 +853,15 @@
       "$2"
     ],
     "description": "console.log with blue text and a yellow background"
+  },
+
+  "console.log with blue text and a yellow background + JSON stringify": {
+    "prefix": "ccl-blue-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a yellow background (+ JSON stringify)"
   },
 
   "console.log with blue text and a magenta background": {
@@ -441,6 +873,15 @@
     "description": "console.log with blue text and a magenta background"
   },
 
+  "console.log with blue text and a magenta background + JSON stringify": {
+    "prefix": "ccl-blue-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a magenta background (+ JSON stringify)"
+  },
+
   "console.log with blue text and a cyan background": {
     "prefix": "ccl-blue-bg-cyan",
     "body": [
@@ -448,6 +889,15 @@
       "$2"
     ],
     "description": "console.log with blue text and a cyan background"
+  },
+
+  "console.log with blue text and a cyan background + JSON stringify": {
+    "prefix": "ccl-blue-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a cyan background (+ JSON stringify)"
   },
 
   "console.log with blue text and a white background": {
@@ -459,6 +909,15 @@
     "description": "console.log with blue text and a white background"
   },
 
+  "console.log with blue text and a white background + JSON stringify": {
+    "prefix": "ccl-blue-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[34m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with blue text and a white background (+ JSON stringify)"
+  },
+
   "console.log with magenta text and a black background": {
     "prefix": "ccl-magenta-bg-black",
     "body": [
@@ -466,6 +925,15 @@
       "$2"
     ],
     "description": "console.log with magenta text and a black background"
+  },
+
+  "console.log with magenta text and a black background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a black background (+ JSON stringify)"
   },
 
   "console.log with magenta text and a red background": {
@@ -477,6 +945,15 @@
     "description": "console.log with magenta text and a red background"
   },
 
+  "console.log with magenta text and a red background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a red background (+ JSON stringify)"
+  },
+
   "console.log with magenta text and a green background": {
     "prefix": "ccl-magenta-bg-green",
     "body": [
@@ -484,6 +961,15 @@
       "$2"
     ],
     "description": "console.log with magenta text and a green background"
+  },
+
+  "console.log with magenta text and a green background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a green background (+ JSON stringify)"
   },
 
   "console.log with magenta text and a yellow background": {
@@ -495,6 +981,15 @@
     "description": "console.log with magenta text and a yellow background"
   },
 
+  "console.log with magenta text and a yellow background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a yellow background (+ JSON stringify)"
+  },
+
   "console.log with magenta text and a blue background": {
     "prefix": "ccl-magenta-bg-blue",
     "body": [
@@ -502,6 +997,15 @@
       "$2"
     ],
     "description": "console.log with magenta text and a blue background"
+  },
+
+  "console.log with magenta text and a blue background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a blue background (+ JSON stringify)"
   },
 
   "console.log with magenta text and a cyan background": {
@@ -513,6 +1017,15 @@
     "description": "console.log with magenta text and a cyan background"
   },
 
+  "console.log with magenta text and a cyan background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a cyan background (+ JSON stringify)"
+  },
+
   "console.log with magenta text and a white background": {
     "prefix": "ccl-magenta-bg-white",
     "body": [
@@ -520,6 +1033,15 @@
       "$2"
     ],
     "description": "console.log with magenta text and a white background"
+  },
+
+  "console.log with magenta text and a white background + JSON stringify": {
+    "prefix": "ccl-magenta-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[35m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with magenta text and a white background (+ JSON stringify)"
   },
 
   "console.log with cyan text and a black background": {
@@ -531,6 +1053,15 @@
     "description": "console.log with cyan text and a black background"
   },
 
+  "console.log with cyan text and a black background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a black background (+ JSON stringify)"
+  },
+
   "console.log with cyan text and a red background": {
     "prefix": "ccl-cyan-bg-red",
     "body": [
@@ -538,6 +1069,15 @@
       "$2"
     ],
     "description": "console.log with cyan text and a red background"
+  },
+
+  "console.log with cyan text and a red background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a red background (+ JSON stringify)"
   },
 
   "console.log with cyan text and a green background": {
@@ -549,6 +1089,15 @@
     "description": "console.log with cyan text and a green background"
   },
 
+  "console.log with cyan text and a green background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a green background (+ JSON stringify)"
+  },
+
   "console.log with cyan text and a yellow background": {
     "prefix": "ccl-cyan-bg-yellow",
     "body": [
@@ -556,6 +1105,15 @@
       "$2"
     ],
     "description": "console.log with cyan text and a yellow background"
+  },
+
+  "console.log with cyan text and a yellow background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a yellow background (+ JSON stringify)"
   },
 
   "console.log with cyan text and a blue background": {
@@ -567,6 +1125,15 @@
     "description": "console.log with cyan text and a blue background"
   },
 
+  "console.log with cyan text and a blue background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a blue background (+ JSON stringify)"
+  },
+
   "console.log with cyan text and a magenta background": {
     "prefix": "ccl-cyan-bg-magenta",
     "body": [
@@ -574,6 +1141,15 @@
       "$2"
     ],
     "description": "console.log with cyan text and a magenta background"
+  },
+
+  "console.log with cyan text and a magenta background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a magenta background (+ JSON stringify)"
   },
 
   "console.log with cyan text and a white background": {
@@ -585,6 +1161,15 @@
     "description": "console.log with cyan text and a white background"
   },
 
+  "console.log with cyan text and a white background + JSON stringify": {
+    "prefix": "ccl-cyan-bg-white-j",
+    "body": [
+      "console.log(`\\x1b[36m\\x1b[47m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with cyan text and a white background (+ JSON stringify)"
+  },
+
   "console.log with white text and a black background": {
     "prefix": "ccl-white-bg-black",
     "body": [
@@ -592,6 +1177,15 @@
       "$2"
     ],
     "description": "console.log with white text and a black background"
+  },
+
+  "console.log with white text and a black background + JSON stringify": {
+    "prefix": "ccl-white-bg-black-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[40m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a black background (+ JSON stringify)"
   },
 
   "console.log with white text and a red background": {
@@ -603,6 +1197,15 @@
     "description": "console.log with white text and a red background"
   },
 
+  "console.log with white text and a red background + JSON stringify": {
+    "prefix": "ccl-white-bg-red-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[41m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a red background (+ JSON stringify)"
+  },
+
   "console.log with white text and a green background": {
     "prefix": "ccl-white-bg-green",
     "body": [
@@ -610,6 +1213,15 @@
       "$2"
     ],
     "description": "console.log with white text and a green background"
+  },
+
+  "console.log with white text and a green background + JSON stringify": {
+    "prefix": "ccl-white-bg-green-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[42m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a green background (+ JSON stringify)"
   },
 
   "console.log with white text and a yellow background": {
@@ -621,6 +1233,15 @@
     "description": "console.log with white text and a yellow background"
   },
 
+  "console.log with white text and a yellow background + JSON stringify": {
+    "prefix": "ccl-white-bg-yellow-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[43m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a yellow background (+ JSON stringify)"
+  },
+
   "console.log with white text and a blue background": {
     "prefix": "ccl-white-bg-blue",
     "body": [
@@ -628,6 +1249,15 @@
       "$2"
     ],
     "description": "console.log with white text and a blue background"
+  },
+
+  "console.log with white text and a blue background + JSON stringify": {
+    "prefix": "ccl-white-bg-blue-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[44m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a blue background (+ JSON stringify)"
   },
 
   "console.log with white text and a magenta background": {
@@ -639,6 +1269,15 @@
     "description": "console.log with white text and a magenta background"
   },
 
+  "console.log with white text and a magenta background + JSON stringify": {
+    "prefix": "ccl-white-bg-magenta-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[45m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a magenta background (+ JSON stringify)"
+  },
+
   "console.log with white text and a cyan background": {
     "prefix": "ccl-white-bg-cyan",
     "body": [
@@ -646,5 +1285,14 @@
       "$2"
     ],
     "description": "console.log with white text and a cyan background"
+  },
+
+  "console.log with white text and a cyan background + JSON stringify": {
+    "prefix": "ccl-white-bg-cyan-j",
+    "body": [
+      "console.log(`\\x1b[37m\\x1b[46m ${JSON.stringify($1)} \\x1b[0m`);",
+      "$2"
+    ],
+    "description": "console.log with white text and a cyan background (+ JSON stringify)"
   },
 }
