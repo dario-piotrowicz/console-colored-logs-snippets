@@ -56,6 +56,24 @@ describe('getFileConsoleColoredLogsListing', () => {
         '    console.log(`\\x1b[44m second \\x1b[0m`);\n',
       ]);
     });
+
+    it('should return multiple listings on multiple lines', async () => {
+      const listings = await getListings(
+        'console.log(`\\x1b[42m first \\x1b[0m`);\n'
+        + 'console.log(`\\x1b[44m second \\x1b[0m`);\n'
+        + '  console.log(`\\x1b[34m\\x1b[43m third \\x1b[0m`); console.log(`\\x1b[34m\\x1b[43m forth \\x1b[0m`);'
+      );
+      expect(listings).toEqual([
+        "mockFile:1:1\n" +
+        '    console.log(`\\x1b[42m first \\x1b[0m`);\n',
+        'mockFile:2:1\n' +
+        '    console.log(`\\x1b[44m second \\x1b[0m`);\n',
+        "mockFile:3:3\n" +
+        '    console.log(`\\x1b[34m\\x1b[43m third \\x1b[0m`);\n',
+        `mockFile:3:${3 + 'console.log(`\\x1b[34m\\x1b[43m third \\x1b[0m`); '.length }\n` +
+        '    console.log(`\\x1b[34m\\x1b[43m forth \\x1b[0m`);\n',
+      ]);
+    });
 });
 
 function getListings(fileContent: string) {
