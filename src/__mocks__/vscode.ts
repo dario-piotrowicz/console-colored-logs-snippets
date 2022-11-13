@@ -18,9 +18,12 @@ export const workspace = {
         return text;
       },
       positionAt(idx: number) {
-        const line = Math.max(0, text.substring(0, idx).split('\n').length - 1);
+        const preLines = text.substring(0, idx).split('\n');
+        const lineIdx = Math.max(0, preLines.length - 1);
+        const preLineChars = preLines.slice(0, lineIdx).join('\n').length + (lineIdx === 0 ? 0 : 1);
         return {
-          line
+          line: lineIdx,
+          character: idx - preLineChars,
         };
       },
       lineAt(line: number): TextLine {
