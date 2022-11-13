@@ -80,7 +80,7 @@
           "order": 0,
           "type": "boolean",
           "default": false,
-          "markdownDescription": "__**Experimental**__\n\n Enable/Disable code highlights for the generated `console.log`s."
+          "markdownDescription": "Enable/Disable code highlights for the generated `console.log`s."
         },
         "console-colored-logs.highlights.range": {
           "order": 1,
