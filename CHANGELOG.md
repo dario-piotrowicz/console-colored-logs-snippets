@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.22
+Added Code Actions for changing the colors of console-colored-logs
+
 ## 0.0.21
 Added JSON.stringify snippets
 
