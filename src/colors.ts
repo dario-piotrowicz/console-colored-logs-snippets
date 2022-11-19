@@ -98,3 +98,19 @@ export const colorNameToHexMap: Record<ColorName, string> = {
   [colorNames.cyan]: "#00FFFF",
   [colorNames.white]: "#FFFFFF",
 };
+
+export function getForegroundBackgroundColorNamesFromFullColorCode(fullColorCode: string): [ColorName|null, ColorName|null] {
+  fullColorCode = fullColorCode.replace(/\\/g, '\\\\');
+
+  const fgBgColors = mapColorCodesToForegroundBackgroundColorNames(fullColorCode);
+  if(fgBgColors) {
+    return fgBgColors;
+  }
+
+  const fgColor = foregroundColorCodeToColorNameMap[fullColorCode];
+  if(fgColor) {
+    return [fgColor, null];
+  }
+
+  return [null, backgroundColorCodeToColorNameMap[fullColorCode]];
+}

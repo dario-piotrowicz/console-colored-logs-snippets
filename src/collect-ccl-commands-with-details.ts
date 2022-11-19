@@ -1,4 +1,4 @@
-import { backgroundColorCodes, foregroundColorCodes, resetCode, foregroundBackgroundColorCodes } from './colors';
+import { consoleColoredLogRegex } from "./console-colored-log-regex";
 
 type MatchDetails = {
   text: string;
@@ -17,7 +17,8 @@ export function collectCclCommandsWithDetails(text: string): CclCommandWithDetai
 
   const textWithoutComments = text.replace(jsCommentsRegex, convertStringToAsterisks);
 
-  while (match = consoleColoredLogRegex.exec(textWithoutComments)) {
+  const regex = new RegExp(consoleColoredLogRegex);
+  while (match = regex.exec(textWithoutComments)) {
     const wholeMatch = match[0];
     const spacingBeforeLogArgument = match[1];
     const colorCode = match[2];
@@ -43,26 +44,6 @@ export function collectCclCommandsWithDetails(text: string): CclCommandWithDetai
   return cclCommandsWithDetails;
 }
 
-const colorCodeRegex = new RegExp(
-  `(${[
-    ...foregroundBackgroundColorCodes,
-    ...foregroundColorCodes,
-    ...backgroundColorCodes,
-  ]
-    .map((code) => code.replace(/\[/g, "\\["))
-    .join("|")})`
-);
-const resetCodeRegex = new RegExp(
-  resetCode.replace("[", "\\[")
-);
-const consoleColoredLogRegex = new RegExp(
-  `console\\.log\\((\\s*\`)${
-    colorCodeRegex.source
-  }([\\s\\S]*?)${
-    resetCodeRegex.source
-  }\`(,[\\s\\S]*?)?\\s*\\);?`,
-  "g"
-);
 
 const jsMultilineCommentRegex = /(\/\*([\s\S]*?)(\*\/|$))/;
 const jsSingleLineCommentRegex = /(\/\/.*)/;
