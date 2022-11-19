@@ -12,6 +12,8 @@ export const colorNames = {
 
 export type ColorName = keyof typeof colorNames;
 
+export const colorNamesArray = Object.values(colorNames);
+
 export const colorNameToForegroundColorCodeMap: Record<ColorName, string> = {
   [colorNames.black]: "\\\\x1b[30m",
   [colorNames.red]: "\\\\x1b[31m",

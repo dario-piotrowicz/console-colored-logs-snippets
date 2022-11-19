@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { collectCclCommandsWithDetails } from './collect-ccl-commands-with-details';
-import { colorNames, colorNameToBackgroundColorCodeMap, colorNameToForegroundColorCodeMap, getForegroundBackgroundColorNamesFromFullColorCode } from './colors';
+import { colorNamesArray, colorNameToBackgroundColorCodeMap, colorNameToForegroundColorCodeMap, getForegroundBackgroundColorNamesFromFullColorCode } from './colors';
 import { consoleColoredLogRegex } from './console-colored-log-regex';
 
 export class ColorsChangeCodeActionProvider implements vscode.CodeActionProvider {
@@ -15,18 +15,38 @@ export class ColorsChangeCodeActionProvider implements vscode.CodeActionProvider
     const codeActions: vscode.CodeAction[] = [];
 
     const [ { colorCode } ] = collectCclCommandsWithDetails(selectedText);
-    const [fgColor, bgColor] = getForegroundBackgroundColorNamesFromFullColorCode(colorCode);
+    const [fgColorName, bgColorName] = getForegroundBackgroundColorNamesFromFullColorCode(colorCode);
 
-    if(fgColor !== colorNames.red) {
-      const codeAction = new vscode.CodeAction(`Update text color to red`, vscode.CodeActionKind.Empty);
+    const possibleColors = colorNamesArray.filter(name => name !== fgColorName && name !== bgColorName);
+
+    const bgColorCode = bgColorName ? colorNameToBackgroundColorCodeMap[bgColorName].replace(/\\\\/g, '\\') : '';
+    possibleColors.forEach(colorName => {
+      const codeAction = new vscode.CodeAction(`Update text color to ${colorName}`, vscode.CodeActionKind.Empty);
       codeAction.edit = new vscode.WorkspaceEdit();
-      const newColorCode = `${colorNameToForegroundColorCodeMap['red'].replace(/\\\\/g, '\\')}${
-        bgColor ? colorNameToBackgroundColorCodeMap[bgColor].replace(/\\\\/g, '\\') : ''
+      const newColorCode = `${
+        colorNameToForegroundColorCodeMap[colorName].replace(/\\\\/g, '\\')
+      }${
+        bgColorCode
       }`;
       const newText = selectedText.replace(colorCode, newColorCode);
       codeAction.edit.replace(document.uri, range, newText);
       codeActions.push(codeAction);
-    }
+    });
+
+    const fgColorCode = fgColorName ? colorNameToForegroundColorCodeMap[fgColorName].replace(/\\\\/g, '\\') : '';
+    possibleColors.forEach(colorName => {
+      const codeAction = new vscode.CodeAction(`Update background color to ${colorName}`, vscode.CodeActionKind.Empty);
+      codeAction.edit = new vscode.WorkspaceEdit();
+      const newColorCode = `${
+        fgColorCode
+      }${
+        colorNameToBackgroundColorCodeMap[colorName].replace(/\\\\/g, '\\')
+      }`;
+      const newText = selectedText.replace(colorCode, newColorCode);
+      codeAction.edit.replace(document.uri, range, newText);
+      codeActions.push(codeAction);
+    });
+
     return codeActions;
   }
 }
