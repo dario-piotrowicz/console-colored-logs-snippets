@@ -34,7 +34,8 @@ export class ColorsChangeCodeActionProvider implements vscode.CodeActionProvider
     const possibleColors = colorNamesArray.filter(name => name !== fgColorName && name !== bgColorName);
 
     possibleColors.forEach(colorName => {
-      const codeAction = new vscode.CodeAction(`Update text color to ${colorName}`, vscode.CodeActionKind.Empty);
+      const setOrUpdateText = fgColorName ? 'Update' : 'Set';
+      const codeAction = new vscode.CodeAction(`${setOrUpdateText} text color to ${colorName}`, vscode.CodeActionKind.Empty);
       codeAction.edit = new vscode.WorkspaceEdit();
       const newColorCode = `${
         colorNameToForegroundColorCodeMap[colorName].replace(/\\\\/g, '\\')
@@ -61,7 +62,8 @@ export class ColorsChangeCodeActionProvider implements vscode.CodeActionProvider
     }
 
     possibleColors.forEach(colorName => {
-      const codeAction = new vscode.CodeAction(`Update background color to ${colorName}`, vscode.CodeActionKind.Empty);
+      const setOrUpdateText = bgColorName ? 'Update' : 'Set';
+      const codeAction = new vscode.CodeAction(`${setOrUpdateText} background color to ${colorName}`, vscode.CodeActionKind.Empty);
       codeAction.edit = new vscode.WorkspaceEdit();
       const newColorCode = `${
         fgColorCode
