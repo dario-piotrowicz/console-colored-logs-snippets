@@ -20,3 +20,5 @@ export const consoleColoredLogRegex = new RegExp(
   }\`(,[\\s\\S]*?)?\\s*\\);?`,
   "g"
 );
+
+export const strictConsoleColoredLogRegex = new RegExp(`^${consoleColoredLogRegex.source}$`);
