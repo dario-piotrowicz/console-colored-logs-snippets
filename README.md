@@ -2,7 +2,7 @@
 
 ![demo of ccl-red](./README_IMAGES/demo-ccl-red.gif)
 
-Very minimal set of snippets to add colors to `console.logs` (in javascript/typescript).
+Very minimal set of snippets to add colors to `console.log`s (in javascript/typescript).
 
 ## How to use the snippets
 
