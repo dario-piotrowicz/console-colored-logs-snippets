@@ -31,8 +31,11 @@ export function activate(context: vscode.ExtensionContext) {
     );
   }));
 
-  context.subscriptions.push(
-    vscode.languages.registerCodeActionsProvider({pattern: '**/*.{js,cjs,mjs,jsx,ts,tsx}'}, new ColorsChangeCodeActionProvider())
+  const colorsChangeCodeActionProvider = new ColorsChangeCodeActionProvider();
+  ["javascript", "javascriptreact", "typescript", "typescriptreact"].forEach(
+    language => context.subscriptions.push(
+      vscode.languages.registerCodeActionsProvider(language, colorsChangeCodeActionProvider)
+    )
   );
 
   vscode.window.onDidChangeActiveTextEditor(updateActiveTextEditorHighlights);
